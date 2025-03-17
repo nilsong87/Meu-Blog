@@ -330,8 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Carregar o primeiro vídeo ao abrir a página
-loadVideo(currentVideoIndex);
+
 
 
 
