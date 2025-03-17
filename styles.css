@@ -514,150 +514,89 @@ section::before {
 
 @media (max-width: 768px) {
   .contato {
-      padding: 20px;
-      margin: 10px auto;
-      max-width: 90%;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-  }
-
-  .contato2 {
-      margin-top: 0;
-      font-size: 1.5em; /* Ajusta o tamanho do título */
-  }
-
-  #form-contato {
-      display: flex;
-      flex-direction: column; /* Coloca os labels e inputs em uma coluna */
-      gap: 15px; /* Espaçamento entre os elementos */
-      align-items: center; /* Centraliza os elementos do formulário */
-  }
-
-  #form-contato label {
-      font-size: 1em;
-      font-weight: bold;
-      margin-bottom: 5px;
-      text-align: left; /* Alinha o texto para a esquerda */
-      width: 100%;
-  }
-
-  #form-contato input,
-  #form-contato textarea {
-      width: 100%; /* Garante que os campos ocupem toda a largura */
-      font-size: 1em;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-  }
-
-  #form-contato textarea {
-      resize: none;
-      height: 100px; /* Define altura padrão */
-  }
-
-  #form-contato button {
-      padding: 10px;
-      font-size: 1em;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      width: 100%; /* Botão ocupa largura total */
-      transition: background-color 0.3s ease;
-  }
-
-  #form-contato button:hover {
-      background-color: #45a049;
-  }
-
-  .footer-content {
-      flex-direction: column; /* Alinha elementos em uma coluna */
-      text-align: center;
-      padding: 20px;
-      background-color: #000; /* Fundo preto */
-      color: white;
-      box-shadow: 0 0 10px rgb(229, 255, 0);
-  }
-
-  .footer-content .logo-container {
-      display: flex;
-      flex-direction: column; /* Organiza logo e texto em uma coluna */
-      align-items: center;
-      margin-bottom: 15px;
-  }
-
-  .footer-content .logo-container img {
-      width: 60px; /* Ajusta tamanho do logo */
-      height: 60px;
-      margin-bottom: 10px;
-  }
-
-  .footer-content .direitos {
-      margin: 10px 0;
-      font-size: 0.9em;
-      text-align: center; /* Centraliza os direitos reservados */
-  }
-
-  .footer-content .contato-zap {
-      margin-top: 5px;
-      font-size: 0.9em;
-      color: #4CAF50;
-  }
-}
-
-@media (max-width: 480px) {
-  .contato {
       padding: 15px;
-      margin: 10px auto;
-      max-width: 95%;
-      border-radius: 8px;
-      text-align: center;
-  }
-
-  .contato2 {
-      font-size: 1.3em;
-      margin-top: 0;
+      margin: 10px;
   }
 
   #form-contato {
       gap: 10px;
   }
 
-  #form-contato label {
+  #form-contato input,
+  #form-contato textarea {
       font-size: 0.9em;
-      margin-bottom: 3px;
+  }
+
+  #form-contato button {
+      padding: 8px 16px;
+      font-size: 0.9em;
+  }
+
+  .footer-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+  }
+
+  .logo-container {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+
+  .direitos {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
+
+  .contato-zap {
+      margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato {
+      padding: 10px;
+      margin: 5px;
+  }
+
+  #form-contato {
+      gap: 8px;
   }
 
   #form-contato input,
   #form-contato textarea {
-      font-size: 0.9em;
-      padding: 8px;
+      font-size: 0.8em;
   }
 
   #form-contato button {
-      font-size: 0.9em;
-      padding: 8px;
+      padding: 6px 12px;
+      font-size: 0.8em;
   }
 
   .footer-content {
-      padding: 15px;
-      box-shadow: 0 0 8px rgb(229, 255, 0);
+      padding: 10px;
   }
 
-  .footer-content .logo-container img {
-      width: 50px;
-      height: 50px;
+  .logo-container img {
+      width: 40px;
+      height: 40px;
   }
 
-  .footer-content .direitos {
+  .logo-text .name {
+      font-size: 1em;
+  }
+
+  .logo-text .subtitle {
       font-size: 0.8em;
   }
 
-  .footer-content .contato-zap {
+  .direitos {
       font-size: 0.8em;
+  }
+
+  .contato-zap {
+      font-size: 0.9em;
   }
 }
 
