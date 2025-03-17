@@ -566,7 +566,9 @@ section::before {
   }
 
   #form-contato {
-    gap: 8px; /* Reduz o espaçamento entre os elementos para telas menores */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os elementos */
   }
 
   #form-contato input,
