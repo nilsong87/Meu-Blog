@@ -514,30 +514,132 @@ section::before {
 
 @media (max-width: 768px) {
   .contato {
+      padding: 20px;
+      margin: 10px auto;
+      background-color: #f9f9f9; /* Adiciona um fundo suave */
+      border-radius: 8px; /* Bordas arredondadas */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+
+  #form-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 15px; /* Espaçamento entre elementos */
+  }
+
+  #form-contato input,
+  #form-contato textarea {
+      font-size: 1em;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+  }
+
+  #form-contato button {
+      padding: 10px;
+      font-size: 1em;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  #form-contato button:hover {
+      background-color: #45a049;
+  }
+
+  .footer-content {
+      padding: 20px;
+      background-color: #333; /* Fundo mais sólido para destaque */
+      color: white;
+      text-align: center;
+  }
+
+  .footer-content .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+  }
+
+  .footer-content .logo-container img {
+      width: 60px;
+      margin-right: 10px;
+  }
+
+  .footer-content .logo-text .name {
+      font-size: 1.1em;
+  }
+
+  .footer-content .logo-text .subtitle {
+      font-size: 0.9em;
+      color: #bbb;
+  }
+
+  .footer-content .direitos,
+  .footer-content .contato-zap {
+      font-size: 0.9em;
+      margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contato {
       padding: 15px;
-      margin: 10px;
+      margin: 10px auto;
+      background-color: #f9f9f9; /* Fundo neutro */
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
   }
 
-  .form-contato {
-      gap: 10px;
+  #form-contato {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Ajusta o espaçamento */
   }
 
-  .form-contato input,
-  .form-contato textarea {
+  #form-contato input,
+  #form-contato textarea {
       font-size: 0.9em;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
   }
 
-  .form-contato button {
-      padding: 8px 16px;
+  #form-contato button {
+      padding: 8px;
       font-size: 0.9em;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  }
+
+  #form-contato button:hover {
+      background-color: #45a049;
   }
 
   .footer-content {
       padding: 15px;
+      text-align: center;
+      background-color: #333;
+      color: white;
+  }
+
+  .footer-content .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 10px;
   }
 
   .footer-content .logo-container img {
-      width: 50px;
+      width: 50px; /* Reduz o tamanho do logo */
+      margin-bottom: 5px;
   }
 
   .footer-content .logo-text .name {
@@ -546,61 +648,19 @@ section::before {
 
   .footer-content .logo-text .subtitle {
       font-size: 0.8em;
+      color: #bbb;
   }
 
   .footer-content .direitos {
       font-size: 0.8em;
-  }
-
-  .footer-content .contato-zap {
-      font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
-  .contato {
-      padding: 10px;
-      margin: 5px;
-  }
-
-  .form-contato {
-      gap: 8px;
-  }
-
-  .form-contato input,
-  .form-contato textarea {
-      font-size: 0.8em;
-  }
-
-  .form-contato button {
-      padding: 6px 12px;
-      font-size: 0.8em;
-  }
-
-  .footer-content {
-      padding: 10px;
-  }
-
-  .footer-content .logo-container img {
-      width: 40px;
-  }
-
-  .footer-content .logo-text .name {
-      font-size: 0.9em;
-  }
-
-  .footer-content .logo-text .subtitle {
-      font-size: 0.7em;
-  }
-
-  .footer-content .direitos {
-      font-size: 0.7em;
+      margin-top: 10px;
   }
 
   .footer-content .contato-zap {
       font-size: 0.8em;
   }
 }
+
 
 @media (max-width: 768px) {
   .video-player iframe {
