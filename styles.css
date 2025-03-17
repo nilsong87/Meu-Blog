@@ -517,12 +517,11 @@ section::before {
   .contato {
       padding: 15px;
       margin: 10px;
-      
   }
 
   #form-contato {
       gap: 10px;
-      background-color: #000000;
+      background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para melhor contraste */
   }
 
   #form-contato input,
@@ -562,12 +561,11 @@ section::before {
   .contato {
       padding: 10px;
       margin: 5px;
-      
   }
 
   #form-contato {
       gap: 8px;
-      background-color: #000000;
+      background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para melhor contraste */
   }
 
   #form-contato input,
