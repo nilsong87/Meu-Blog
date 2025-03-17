@@ -312,6 +312,7 @@ section::before {
 
 .contato{
   text-align: center;
+  background-color: #000000;
 }
 
 .contato2 {
@@ -516,6 +517,7 @@ section::before {
   .contato {
       padding: 15px;
       margin: 10px;
+      background-color: #000000;
   }
 
   #form-contato {
@@ -558,6 +560,7 @@ section::before {
   .contato {
       padding: 10px;
       margin: 5px;
+      background-color: #000000;
   }
 
   #form-contato {
