@@ -207,8 +207,8 @@ const videos = [
  
   
 ];
-   
-  let currentVideoIndex = 0;
+    
+  let currentVideoIndex = 0; // Índice do vídeo atual
   const videoIframe = document.getElementById('youtube-video');
   const playlistButtons = document.getElementById('playlist-buttons');
   const playlistVideos = document.getElementById('playlist-videos');
@@ -218,22 +218,9 @@ const videos = [
   function loadVideo(index) {
       if (index >= 0 && index < videos.length) {
           videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
-          currentVideoIndex = index;
+          currentVideoIndex = index; // Atualiza o índice atual
       }
   }
-  
-  // Função para verificar o tamanho da tela (somente carrega o primeiro vídeo na inicialização, sem sobrescrever escolha do usuário)
-  function checkScreenSize() {
-      if (window.innerWidth <= 768 && !videoIframe.src) {
-          loadVideo(0);
-      }
-  }
-  
-  // Verifique o tamanho da tela ao carregar a página
-  window.addEventListener('load', () => {
-      checkScreenSize();
-      if (!videoIframe.src) loadVideo(0); // Certifica-se de que o primeiro vídeo será carregado na inicialização
-  });
   
   // Controles de navegação
   document.getElementById('prev-video').addEventListener('click', () => {
@@ -269,26 +256,29 @@ const videos = [
   
   // Carregar vídeos de uma playlist específica
   function loadPlaylist(banda) {
-      playlistVideos.innerHTML = '';
-      playlists[banda].forEach((video, index) => {
+      playlistVideos.innerHTML = ''; // Limpa a lista de vídeos antes de exibir
+      playlists[banda].forEach(video => {
           const videoItem = document.createElement('div');
           videoItem.className = 'video-item';
           videoItem.innerHTML = `
               <h4>${video.title}</h4>
           `;
           videoItem.addEventListener('click', () => {
-              loadVideo(videos.findIndex(v => v.id === video.id)); // Carrega o vídeo selecionado
-              closePlaylist(); // Fecha a playlist ao selecionar
+              const selectedIndex = videos.findIndex(v => v.id === video.id);
+              if (selectedIndex !== -1) {
+                  loadVideo(selectedIndex); // Carrega o vídeo escolhido
+                  closePlaylist(); // Fecha a playlist
+              }
           });
           playlistVideos.appendChild(videoItem);
       });
-      closePlaylistButton.style.display = 'block';
+      closePlaylistButton.style.display = 'block'; // Exibe o botão para fechar a playlist
   }
   
   // Função para fechar a playlist
   function closePlaylist() {
-      playlistVideos.innerHTML = '';
-      closePlaylistButton.style.display = 'none';
+      playlistVideos.innerHTML = ''; // Limpa a lista de vídeos
+      closePlaylistButton.style.display = 'none'; // Esconde o botão de fechar
   }
   
   closePlaylistButton.addEventListener('click', closePlaylist);
