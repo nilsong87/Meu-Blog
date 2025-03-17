@@ -333,22 +333,21 @@ const videos = [
   
   // Menu hambúrguer
   document.addEventListener('DOMContentLoaded', function () {
-      const menuToggle = document.getElementById('menu-toggle');
-      const nav = document.getElementById('nav');
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
   
-      menuToggle.addEventListener('click', function () {
-          nav.classList.toggle('active');
-      });
+    menuToggle.addEventListener('click', function () {
+      nav.classList.toggle('active'); // Alterna a classe 'active' no menu
+    });
   
-      // Fechar o menu quando um link for clicado
-      const navLinks = document.querySelectorAll('.nav ul li a');
-      navLinks.forEach(link => {
-          link.addEventListener('click', function () {
-              nav.classList.remove('active');
-          });
+    // Fechar o menu quando um link for clicado
+    const navLinks = document.querySelectorAll('.nav ul li a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        nav.classList.remove('active'); // Fecha o menu ao clicar em um link
       });
-  });
-   
+    });
+  }); 
 
 
 
