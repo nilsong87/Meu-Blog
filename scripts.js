@@ -208,7 +208,7 @@ const videos = [
   
 ];
     
-  let currentVideoIndex = 0; // Índice do vídeo atual
+  let currentVideoIndex = 0; // Índice do vídeo atualmente exibido no player
   const videoIframe = document.getElementById('youtube-video');
   const playlistButtons = document.getElementById('playlist-buttons');
   const playlistVideos = document.getElementById('playlist-videos');
@@ -218,9 +218,31 @@ const videos = [
   function loadVideo(index) {
       if (index >= 0 && index < videos.length) {
           videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
-          currentVideoIndex = index; // Atualiza o índice atual
+          currentVideoIndex = index; // Atualiza o índice do vídeo atual
       }
   }
+  
+  // Função que inicializa o vídeo apenas uma vez (sem sobrescrever manualmente)
+  function initializeVideo() {
+      if (!videoIframe.src) { // Verifica se o player ainda não foi inicializado
+          loadVideo(0); // Carrega apenas o primeiro vídeo ao iniciar
+      }
+  }
+  
+  // Verifica o tamanho da tela sem alterar o vídeo já escolhido pelo usuário
+  function checkScreenSize() {
+      if (window.innerWidth <= 768 && !videoIframe.src) {
+          initializeVideo(); // Somente inicializa se nenhum vídeo estiver carregado
+      }
+  }
+  
+  // Evento: Verificar o tamanho da tela ao carregar a página
+  window.addEventListener('load', () => {
+      initializeVideo(); // Inicializa o vídeo ao carregar a página
+  });
+  
+  // Evento: Verificar o tamanho da tela ao redimensionar
+  window.addEventListener('resize', checkScreenSize);
   
   // Controles de navegação
   document.getElementById('prev-video').addEventListener('click', () => {
@@ -257,17 +279,15 @@ const videos = [
   // Carregar vídeos de uma playlist específica
   function loadPlaylist(banda) {
       playlistVideos.innerHTML = ''; // Limpa a lista de vídeos antes de exibir
-      playlists[banda].forEach(video => {
+      playlists[banda].forEach((video) => {
           const videoItem = document.createElement('div');
           videoItem.className = 'video-item';
-          videoItem.innerHTML = `
-              <h4>${video.title}</h4>
-          `;
+          videoItem.innerHTML = `<h4>${video.title}</h4>`;
           videoItem.addEventListener('click', () => {
               const selectedIndex = videos.findIndex(v => v.id === video.id);
               if (selectedIndex !== -1) {
-                  loadVideo(selectedIndex); // Carrega o vídeo escolhido
-                  closePlaylist(); // Fecha a playlist
+                  loadVideo(selectedIndex); // Carrega o vídeo selecionado no player
+                  closePlaylist(); // Fecha a playlist após o clique
               }
           });
           playlistVideos.appendChild(videoItem);
@@ -284,7 +304,7 @@ const videos = [
   closePlaylistButton.addEventListener('click', closePlaylist);
   
   // Botão "Voltar ao topo"
-  window.onscroll = function() {
+  window.onscroll = function () {
       scrollFunction();
   };
   
@@ -296,29 +316,29 @@ const videos = [
       }
   }
   
-  document.getElementById("back-to-top").addEventListener("click", function() {
+  document.getElementById("back-to-top").addEventListener("click", function () {
       document.body.scrollTop = 0;
       document.documentElement.scrollTop = 0;
   });
   
   // Menu hambúrguer
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
       const menuToggle = document.getElementById('menu-toggle');
       const nav = document.getElementById('nav');
   
-      menuToggle.addEventListener('click', function() {
+      menuToggle.addEventListener('click', function () {
           nav.classList.toggle('active');
       });
   
       // Fechar o menu quando um link for clicado
       const navLinks = document.querySelectorAll('.nav ul li a');
       navLinks.forEach(link => {
-          link.addEventListener('click', function() {
+          link.addEventListener('click', function () {
               nav.classList.remove('active');
           });
       });
   });
-  
+   
 
 
 
