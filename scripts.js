@@ -2,6 +2,7 @@
 // Lista de vídeos com título e banda/música
 const videos = [
   { id: "OlETRETdx5c", title: "Angry Chair - Alice in Chains", banda: "Alice in Chains" },
+  { id: "UpM83IM8Rlc", title: "Blead the Freak - Alice in Chains", banda: "Alice in Chains" },  
   { id: "k4RYdqAcreA", title: "Heaven Beside You - Alice in Chains", banda: "Alice in Chains" },
   { id: "eSlrnwSNxK8", title: "Man In The Box - Alice In Chains", banda: "Alice in Chains" },
   { id: "vFJtlkDEL_Y", title: "Stone - Alice in Chains", banda: "Alice in Chains" },
@@ -92,6 +93,7 @@ const videos = [
   { id: "s06vMxmOHf4", title: "Wherever I May Roam - Metallica", banda: "Metallica" },
   
   { id: "PffS1WDXzMA", title: "Teutonic Terror - Accept", banda: "Mix Metal Songs" },
+  { id: "4zG2m2mhIZ4", title: "Scream - Avenged Sevenfold", banda: "Mix Metal Songs" },  
   { id: "tk5HmJU9lkg", title: "Crazy - Aerosmith", banda: "Mix Metal Songs" },
   { id: "TGlzShVh2xs", title: "Animals - Architects", banda: "Mix Metal Songs" },
   { id: "HohjdGxTmo8", title: "Dead Butterflies - Architects", banda: "Mix Metal Songs" },
@@ -107,6 +109,7 @@ const videos = [
   { id: "bYfkSjr17vM", title: "Holy Diver - Killswitch Engage", banda: "Mix Metal Songs" },
   { id: "VjlC40mZp5o", title: "Detroit Rock City - KISS", banda: "Mix Metal Songs" },
   { id: "8Cd3N_L932A", title: "War Machine - KISS", banda: "Mix Metal Songs" },
+  { id: "bc6QOdBAMrs", title: "Black Label - Lamb of God", banda: "Mix Metal Songs" },
   { id: "Q9ZFW791w6s", title: "Omerta - Lamb of God", banda: "Mix Metal Songs" },
   { id: "LbaI10MAlFI", title: "Papercut - Linkin Park", banda: "Mix Metal Songs" },
   { id: "f_DaHIlMtgU", title: "Astonishing Panorama Of The Endtimes - Marilyn Manson", banda: "Mix Metal Songs" },
@@ -115,8 +118,10 @@ const videos = [
   { id: "3hhdZ2Uf80E", title: "Dig - Mudvayne", banda: "Mix Metal Songs" },
   { id: "vC2klX-osLA", title: "Decode - Paramore", banda: "Mix Metal Songs" },
   { id: "8TPKaK5piM4", title: "Hollow - Pantera", banda: "Mix Metal Songs" },
-  { id: "qQ2WIYNhc5g", title: "The Ghoul - Pentagram", banda: "Mix Metal Songs" },
+  { id: "q7ccnDTqEdM", title: "Forever My Queen - Pentagram", banda: "Mix Metal Songs" }
+  { id: "qQ2WIYNhc5g", title: "The Ghoul - Pentagram", banda: "Mix Metal Songs" }  
   { id: "ojng6ysSNYg", title: "The Sky Is Fallin - Queens of the Stone Age", banda: "Mix Metal Songs" },
+  { id: "Dkbq-0XQ50Y", title: "Open - Queensrÿche", banda: "Mix Metal Songs" },
   { id: "2QQw1WiYBTo", title: "Dragula - Rob Zombie", banda: "Mix Metal Songs" },
   { id: "6NWrk6D1fPI", title: "Praise - Sevendust", banda: "Mix Metal Songs" },
   { id: "FR2xGPHgUQc", title: "Freak - Silverchair", banda: "Mix Metal Songs" },
@@ -124,6 +129,7 @@ const videos = [
   { id: "VS2Eg_vusI4", title: "Return To Serenity - Testament", banda: "Mix Metal Songs" },
   { id: "JuaR5Ygm2tI", title: "Painkiller - Three Days Grace", banda: "Mix Metal Songs" },
   { id: "kWhQ-qYmHOo", title: "In Waves - Trivium", banda: "Mix Metal Songs" },
+  { id: "TPqdZoR9JxA", title: "Wild Child - W.A.S.P", banda: "Mix Metal Songs" },
 
   { id: "exysvRIPjxo", title: "Gets Me Through - Ozzy Osbourn", banda: "Ozzy Osbourne" },
   { id: "Yk1bfdoeQis", title: "Mr Crowley - Ozzy Osbourne", banda: "Ozzy Osbourne" },
@@ -168,6 +174,7 @@ const videos = [
   { id: "S0n-ZBQ9z3w", title: "Sonne - Rammstein", banda: "Rammstein" },
   { id: "IRAFmWibJX0", title: "Stein Um Stein - Rammstein", banda: "Rammstein" },
   { id: "_a6E5ZoxGaU", title: "Te Quiero Puta! - Rammstein", banda: "Rammstein" },
+  { id: "86cyUI46xTw", title: "Tier - Rammstein", banda: "Rammstein" },
   { id: "aZNlfrgKTAo", title: "Zeig Dich - Rammstein", banda: "Rammstein" },  
     
   { id: "yE-8qq0qdoc", title: "Amen - Sepultura", banda: "Sepultura" },
@@ -192,7 +199,10 @@ const videos = [
   { id: "eSzpgIxv7uI", title: "Liberate - Slipknot", banda: "Slipknot" },
   { id: "UnAMAb4YJHA", title: "People = Shit - Slipknot", banda: "Slipknot" },
 
+  { id: "bneHBp8htLM", title: "Gone Sovereign - Stone Sour", banda: "Stone Sour" },
+  { id: "sMjEBkhrAhs", title: "Song#3 - Stone Sour", banda: "Stone Sour" },
   { id: "w-GjF6Lib9Q", title: "Through Glass - Stone Sour", banda: "Stone Sour" },
+  
 
   { id: "ZYutZ-vxLZs", title: "Bounce - System of a Down", banda: "System of a Down" },
   { id: "__ovuI42qwo", title: "BYOB - System of a Down", banda: "System of a Down" },
