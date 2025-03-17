@@ -514,25 +514,27 @@ section::before {
 
 
 @media (max-width: 768px) {
-  .contato {
-      padding: 15px;
-      margin: 10px;
+  #form-contato {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Espaçamento entre os elementos */
   }
 
-  #form-contato {
-      gap: 10px;
-      background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para melhor contraste */
+  #form-contato label {
+    margin-bottom: 5px; /* Espaçamento entre o label e o input */
   }
 
   #form-contato input,
   #form-contato textarea {
-      font-size: 0.9em;
+    width: 100%; /* Faz os inputs e textarea ocuparem 100% da largura */
+    font-size: 0.9em; /* Ajusta o tamanho da fonte para telas menores */
   }
 
   #form-contato button {
-      padding: 8px 16px;
-      font-size: 0.9em;
-      background-color: #a70000;
+    width: 100%; /* Faz o botão ocupar 100% da largura */
+    padding: 10px; /* Aumenta o padding para melhorar a usabilidade em telas touch */
+    font-size: 1em; /* Ajusta o tamanho da fonte do botão */
+    background-color: #a70000; /* Mantém a cor do botão */
   }
 
   .footer-content {
@@ -564,19 +566,17 @@ section::before {
   }
 
   #form-contato {
-      gap: 8px;
-      background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro para melhor contraste */
+    gap: 8px; /* Reduz o espaçamento entre os elementos para telas menores */
   }
 
   #form-contato input,
   #form-contato textarea {
-      font-size: 0.8em;
+    font-size: 1.2em; /* Reduz o tamanho da fonte para telas menores */
   }
 
   #form-contato button {
-      padding: 6px 12px;
-      font-size: 0.8em;
-      background-color: #a70000;
+    padding: 8px; /* Reduz o padding do botão para telas menores */
+    font-size: 0.9em; /* Reduz o tamanho da fonte do botão */
   }
 
   .footer-content {
