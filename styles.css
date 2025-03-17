@@ -512,41 +512,49 @@ section::before {
 }
 
 
-/* Estilização para telas de até 768px */
 @media (max-width: 768px) {
   .contato {
       padding: 20px;
-      margin: 20px auto;
-      max-width: 90%; /* Ajuste para ocupar até 90% da largura da tela */
+      margin: 10px auto;
+      max-width: 90%;
       background-color: #f9f9f9;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }
+
+  .contato2 {
+      margin-top: 0;
+      font-size: 1.5em; /* Ajusta o tamanho do título */
   }
 
   #form-contato {
       display: flex;
       flex-direction: column; /* Coloca os labels e inputs em uma coluna */
       gap: 15px; /* Espaçamento entre os elementos */
+      align-items: center; /* Centraliza os elementos do formulário */
   }
 
   #form-contato label {
       font-size: 1em;
       font-weight: bold;
-      margin-bottom: 5px; /* Espaçamento entre o label e o input */
+      margin-bottom: 5px;
+      text-align: left; /* Alinha o texto para a esquerda */
+      width: 100%;
   }
 
   #form-contato input,
   #form-contato textarea {
+      width: 100%; /* Garante que os campos ocupem toda a largura */
       font-size: 1em;
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
-      width: 100%; /* Ajusta os inputs para ocupar toda a largura disponível */
   }
 
   #form-contato textarea {
       resize: none;
-      height: 100px;
+      height: 100px; /* Define altura padrão */
   }
 
   #form-contato button {
@@ -557,6 +565,7 @@ section::before {
       border-radius: 5px;
       border: none;
       cursor: pointer;
+      width: 100%; /* Botão ocupa largura total */
       transition: background-color 0.3s ease;
   }
 
@@ -565,59 +574,61 @@ section::before {
   }
 
   .footer-content {
+      flex-direction: column; /* Alinha elementos em uma coluna */
+      text-align: center;
       padding: 20px;
-      text-align: center; /* Centraliza todo o texto no footer */
-      background-color: #333; /* Fundo escuro */
+      background-color: #000; /* Fundo preto */
       color: white;
+      box-shadow: 0 0 10px rgb(229, 255, 0);
   }
 
   .footer-content .logo-container {
       display: flex;
-      flex-direction: column; /* Alinha logo e texto em uma coluna */
+      flex-direction: column; /* Organiza logo e texto em uma coluna */
       align-items: center;
       margin-bottom: 15px;
   }
 
   .footer-content .logo-container img {
-      width: 60px; /* Ajusta o tamanho do logo */
+      width: 60px; /* Ajusta tamanho do logo */
+      height: 60px;
       margin-bottom: 10px;
   }
 
-  .footer-content .logo-text .name {
-      font-size: 1.1em;
-      font-weight: bold;
-  }
-
-  .footer-content .logo-text .subtitle {
-      font-size: 0.9em;
-      color: #bbb;
-  }
-
   .footer-content .direitos {
-      font-size: 1em;
-      margin-top: 10px;
+      margin: 10px 0;
+      font-size: 0.9em;
+      text-align: center; /* Centraliza os direitos reservados */
   }
 
   .footer-content .contato-zap {
-      font-size: 0.9em;
       margin-top: 5px;
+      font-size: 0.9em;
+      color: #4CAF50;
   }
 }
 
-/* Estilização adicional para telas de até 480px */
 @media (max-width: 480px) {
   .contato {
       padding: 15px;
       margin: 10px auto;
-      max-width: 95%; /* Ajusta para ocupar até 95% da largura da tela */
+      max-width: 95%;
+      border-radius: 8px;
+      text-align: center;
+  }
+
+  .contato2 {
+      font-size: 1.3em;
+      margin-top: 0;
   }
 
   #form-contato {
-      gap: 10px; /* Reduz o espaçamento entre os elementos */
+      gap: 10px;
   }
 
   #form-contato label {
       font-size: 0.9em;
+      margin-bottom: 3px;
   }
 
   #form-contato input,
@@ -627,24 +638,18 @@ section::before {
   }
 
   #form-contato button {
-      padding: 8px;
       font-size: 0.9em;
+      padding: 8px;
   }
 
   .footer-content {
       padding: 15px;
+      box-shadow: 0 0 8px rgb(229, 255, 0);
   }
 
   .footer-content .logo-container img {
       width: 50px;
-  }
-
-  .footer-content .logo-text .name {
-      font-size: 1em;
-  }
-
-  .footer-content .logo-text .subtitle {
-      font-size: 0.8em;
+      height: 50px;
   }
 
   .footer-content .direitos {
