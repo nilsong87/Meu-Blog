@@ -214,6 +214,7 @@ const playlistButtons = document.getElementById('playlist-buttons');
 const playlistVideos = document.getElementById('playlist-videos');
 const closePlaylistButton = document.getElementById('close-playlist');
 
+// Função para carregar o vídeo no player principal
 function loadVideo(index) {
     if (index >= 0 && index < videos.length) {
         videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
@@ -221,6 +222,23 @@ function loadVideo(index) {
     }
 }
 
+// Função para verificar o tamanho da tela e ajustar o comportamento
+function checkScreenSize() {
+    if (window.innerWidth <= 768) {
+        // Se a tela for menor ou igual a 768px, carregue o primeiro vídeo automaticamente
+        loadVideo(0);
+    }
+}
+
+// Verifique o tamanho da tela ao carregar a página
+window.addEventListener('load', checkScreenSize);
+
+// Verifique o tamanho da tela ao redimensionar a janela
+window.addEventListener('resize', checkScreenSize);
+
+
+
+// Controles de navegação
 document.getElementById('prev-video').addEventListener('click', () => {
     if (currentVideoIndex > 0) {
         loadVideo(currentVideoIndex - 1);
@@ -233,6 +251,8 @@ document.getElementById('next-video').addEventListener('click', () => {
     }
 });
 
+
+// Lógica para carregar playlists
 const playlists = {};
 videos.forEach(video => {
     if (!playlists[video.banda]) {
@@ -274,6 +294,7 @@ closePlaylistButton.addEventListener('click', () => {
     closePlaylistButton.style.display = 'none';
 });
 
+// Botão "Voltar ao topo"
 window.onscroll = function() {
     scrollFunction();
 };
@@ -291,6 +312,7 @@ document.getElementById("back-to-top").addEventListener("click", function() {
     document.documentElement.scrollTop = 0;
 });
 
+// Menu hambúrguer
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav');
@@ -308,4 +330,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Carregar o primeiro vídeo ao abrir a página
 loadVideo(currentVideoIndex);
+
+
+
+
+
+
+

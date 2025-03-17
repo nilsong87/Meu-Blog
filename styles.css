@@ -601,3 +601,25 @@ section::before {
       font-size: 0.8em;
   }
 }
+
+@media (max-width: 768px) {
+  .video-player iframe {
+      height: 300px; /* Altura menor para telas menores */
+  }
+
+  .video-controls button {
+      padding: 8px 16px; /* Botões menores */
+      font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-player iframe {
+      height: 200px; /* Altura ainda menor para celulares */
+  }
+
+  .video-controls button {
+      padding: 6px 12px; /* Botões ainda menores */
+      font-size: 0.8em;
+  }
+}
