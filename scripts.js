@@ -291,4 +291,21 @@ document.getElementById("back-to-top").addEventListener("click", function() {
     document.documentElement.scrollTop = 0;
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('nav');
+
+    menuToggle.addEventListener('click', function() {
+        nav.classList.toggle('active');
+    });
+
+    // Fechar o menu quando um link for clicado
+    const navLinks = document.querySelectorAll('.nav ul li a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            nav.classList.remove('active');
+        });
+    });
+});
+
 loadVideo(currentVideoIndex);
