@@ -208,128 +208,131 @@ const videos = [
   
 ];
   
-let currentVideoIndex = 0;
-const videoIframe = document.getElementById('youtube-video');
-const playlistButtons = document.getElementById('playlist-buttons');
-const playlistVideos = document.getElementById('playlist-videos');
-const closePlaylistButton = document.getElementById('close-playlist');
-
-// Função para carregar o vídeo no player principal
-function loadVideo(index) {
-    if (index >= 0 && index < videos.length) {
-        videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
-        currentVideoIndex = index;
-    }
-}
-
-// Função para verificar o tamanho da tela e ajustar o comportamento
-function checkScreenSize() {
-    if (window.innerWidth <= 768) {
-        // Se a tela for menor ou igual a 768px, carregue o primeiro vídeo automaticamente
-        loadVideo(0);
-    }
-}
-
-// Verifique o tamanho da tela ao carregar a página
-window.addEventListener('load', checkScreenSize);
-
-// Verifique o tamanho da tela ao redimensionar a janela
-window.addEventListener('resize', checkScreenSize);
-
-
-
-// Controles de navegação
-document.getElementById('prev-video').addEventListener('click', () => {
-    if (currentVideoIndex > 0) {
-        loadVideo(currentVideoIndex - 1);
-    }
-});
-
-document.getElementById('next-video').addEventListener('click', () => {
-    if (currentVideoIndex < videos.length - 1) {
-        loadVideo(currentVideoIndex + 1);
-    }
-});
-
-
-// Lógica para carregar playlists
-const playlists = {};
-videos.forEach(video => {
-    if (!playlists[video.banda]) {
-        playlists[video.banda] = [];
-    }
-    playlists[video.banda].push(video);
-});
-
-Object.keys(playlists).forEach(banda => {
-    const button = document.createElement('button');
-    button.textContent = banda;
-    button.addEventListener('click', () => {
-        loadPlaylist(banda);
-    });
-    playlistButtons.appendChild(button);
-});
-
-function loadPlaylist(banda) {
-    playlistVideos.innerHTML = '';
-    playlists[banda].forEach(video => {
-        const videoItem = document.createElement('div');
-        videoItem.className = 'video-item';
-        videoItem.innerHTML = `
-            <h4>${video.title}</h4>
-            <iframe src="https://www.youtube.com/embed/${video.id}" frameborder="0" allowfullscreen></iframe>
-        `;
-        videoItem.addEventListener('click', () => {
-            loadVideo(videos.findIndex(v => v.id === video.id));
-            playlistVideos.innerHTML = '';
-            closePlaylistButton.style.display = 'none';
-        });
-        playlistVideos.appendChild(videoItem);
-    });
-    closePlaylistButton.style.display = 'block';
-}
-
-closePlaylistButton.addEventListener('click', () => {
-    playlistVideos.innerHTML = '';
-    closePlaylistButton.style.display = 'none';
-});
-
-// Botão "Voltar ao topo"
-window.onscroll = function() {
-    scrollFunction();
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("back-to-top").style.display = "block";
-    } else {
-        document.getElementById("back-to-top").style.display = "none";
-    }
-}
-
-document.getElementById("back-to-top").addEventListener("click", function() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-});
-
-// Menu hambúrguer
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
-
-    menuToggle.addEventListener('click', function() {
-        nav.classList.toggle('active');
-    });
-
-    // Fechar o menu quando um link for clicado
-    const navLinks = document.querySelectorAll('.nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            nav.classList.remove('active');
-        });
-    });
-});
-
+ 
+  let currentVideoIndex = 0;
+  const videoIframe = document.getElementById('youtube-video');
+  const playlistButtons = document.getElementById('playlist-buttons');
+  const playlistVideos = document.getElementById('playlist-videos');
+  const closePlaylistButton = document.getElementById('close-playlist');
+  
+  // Função para carregar o vídeo no player principal
+  function loadVideo(index) {
+      if (index >= 0 && index < videos.length) {
+          videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
+          currentVideoIndex = index;
+      }
+  }
+  
+  // Função para verificar o tamanho da tela e ajustar o comportamento
+  function checkScreenSize() {
+      if (window.innerWidth <= 768) {
+          // Se a tela for menor ou igual a 768px, carregue o primeiro vídeo automaticamente
+          loadVideo(0);
+      }
+  }
+  
+  // Verifique o tamanho da tela ao carregar a página
+  window.addEventListener('load', () => {
+      checkScreenSize();
+      loadVideo(0); // Sempre carrega o primeiro vídeo no início
+  });
+  
+  // Verifique o tamanho da tela ao redimensionar a janela
+  window.addEventListener('resize', checkScreenSize);
+  
+  // Controles de navegação
+  document.getElementById('prev-video').addEventListener('click', () => {
+      if (currentVideoIndex > 0) {
+          loadVideo(currentVideoIndex - 1);
+      }
+  });
+  
+  document.getElementById('next-video').addEventListener('click', () => {
+      if (currentVideoIndex < videos.length - 1) {
+          loadVideo(currentVideoIndex + 1);
+      }
+  });
+  
+  // Lógica para carregar playlists
+  const playlists = {};
+  videos.forEach(video => {
+      if (!playlists[video.banda]) {
+          playlists[video.banda] = [];
+      }
+      playlists[video.banda].push(video);
+  });
+  
+  // Criação dos botões de playlists
+  Object.keys(playlists).forEach(banda => {
+      const button = document.createElement('button');
+      button.textContent = banda;
+      button.addEventListener('click', () => {
+          loadPlaylist(banda);
+      });
+      playlistButtons.appendChild(button);
+  });
+  
+  // Carregar vídeos de uma playlist específica
+  function loadPlaylist(banda) {
+      playlistVideos.innerHTML = '';
+      playlists[banda].forEach((video, index) => {
+          const videoItem = document.createElement('div');
+          videoItem.className = 'video-item';
+          videoItem.innerHTML = `
+              <h4>${video.title}</h4>
+          `;
+          videoItem.addEventListener('click', () => {
+              loadVideo(videos.findIndex(v => v.id === video.id));
+              playlistVideos.innerHTML = ''; // Limpa a playlist ao clicar em um vídeo
+              closePlaylistButton.style.display = 'none'; // Esconde o botão de fechar
+          });
+          playlistVideos.appendChild(videoItem);
+      });
+      closePlaylistButton.style.display = 'block';
+  }
+  
+  // Evento para fechar a playlist
+  closePlaylistButton.addEventListener('click', () => {
+      playlistVideos.innerHTML = '';
+      closePlaylistButton.style.display = 'none';
+  });
+  
+  // Botão "Voltar ao topo"
+  window.onscroll = function() {
+      scrollFunction();
+  };
+  
+  function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          document.getElementById("back-to-top").style.display = "block";
+      } else {
+          document.getElementById("back-to-top").style.display = "none";
+      }
+  }
+  
+  document.getElementById("back-to-top").addEventListener("click", function() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+  });
+  
+  // Menu hambúrguer
+  document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menu-toggle');
+      const nav = document.getElementById('nav');
+  
+      menuToggle.addEventListener('click', function() {
+          nav.classList.toggle('active');
+      });
+  
+      // Fechar o menu quando um link for clicado
+      const navLinks = document.querySelectorAll('.nav ul li a');
+      navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+              nav.classList.remove('active');
+          });
+      });
+  });
+  
 
 
 
