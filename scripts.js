@@ -118,8 +118,8 @@ const videos = [
   { id: "3hhdZ2Uf80E", title: "Dig - Mudvayne", banda: "Mix Metal Songs" },
   { id: "vC2klX-osLA", title: "Decode - Paramore", banda: "Mix Metal Songs" },
   { id: "8TPKaK5piM4", title: "Hollow - Pantera", banda: "Mix Metal Songs" },
-  { id: "q7ccnDTqEdM", title: "Forever My Queen - Pentagram", banda: "Mix Metal Songs" }
-  { id: "qQ2WIYNhc5g", title: "The Ghoul - Pentagram", banda: "Mix Metal Songs" }  
+  { id: "q7ccnDTqEdM", title: "Forever My Queen - Pentagram", banda: "Mix Metal Songs" },
+  { id: "qQ2WIYNhc5g", title: "The Ghoul - Pentagram", banda: "Mix Metal Songs" },  
   { id: "ojng6ysSNYg", title: "The Sky Is Fallin - Queens of the Stone Age", banda: "Mix Metal Songs" },
   { id: "Dkbq-0XQ50Y", title: "Open - Queensrÿche", banda: "Mix Metal Songs" },
   { id: "2QQw1WiYBTo", title: "Dragula - Rob Zombie", banda: "Mix Metal Songs" },
