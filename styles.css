@@ -512,19 +512,27 @@ section::before {
 }
 
 
+/* Estilização para telas de até 768px */
 @media (max-width: 768px) {
   .contato {
       padding: 20px;
-      margin: 10px auto;
-      background-color: #f9f9f9; /* Adiciona um fundo suave */
-      border-radius: 8px; /* Bordas arredondadas */
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+      margin: 20px auto;
+      max-width: 90%; /* Ajuste para ocupar até 90% da largura da tela */
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   #form-contato {
       display: flex;
-      flex-direction: column;
-      gap: 15px; /* Espaçamento entre elementos */
+      flex-direction: column; /* Coloca os labels e inputs em uma coluna */
+      gap: 15px; /* Espaçamento entre os elementos */
+  }
+
+  #form-contato label {
+      font-size: 1em;
+      font-weight: bold;
+      margin-bottom: 5px; /* Espaçamento entre o label e o input */
   }
 
   #form-contato input,
@@ -533,6 +541,12 @@ section::before {
       padding: 10px;
       border: 1px solid #ddd;
       border-radius: 5px;
+      width: 100%; /* Ajusta os inputs para ocupar toda a largura disponível */
+  }
+
+  #form-contato textarea {
+      resize: none;
+      height: 100px;
   }
 
   #form-contato button {
@@ -552,25 +566,26 @@ section::before {
 
   .footer-content {
       padding: 20px;
-      background-color: #333; /* Fundo mais sólido para destaque */
+      text-align: center; /* Centraliza todo o texto no footer */
+      background-color: #333; /* Fundo escuro */
       color: white;
-      text-align: center;
   }
 
   .footer-content .logo-container {
       display: flex;
+      flex-direction: column; /* Alinha logo e texto em uma coluna */
       align-items: center;
-      justify-content: center;
       margin-bottom: 15px;
   }
 
   .footer-content .logo-container img {
-      width: 60px;
-      margin-right: 10px;
+      width: 60px; /* Ajusta o tamanho do logo */
+      margin-bottom: 10px;
   }
 
   .footer-content .logo-text .name {
       font-size: 1.1em;
+      font-weight: bold;
   }
 
   .footer-content .logo-text .subtitle {
@@ -578,68 +593,50 @@ section::before {
       color: #bbb;
   }
 
-  .footer-content .direitos,
+  .footer-content .direitos {
+      font-size: 1em;
+      margin-top: 10px;
+  }
+
   .footer-content .contato-zap {
       font-size: 0.9em;
-      margin-top: 10px;
+      margin-top: 5px;
   }
 }
 
+/* Estilização adicional para telas de até 480px */
 @media (max-width: 480px) {
   .contato {
       padding: 15px;
       margin: 10px auto;
-      background-color: #f9f9f9; /* Fundo neutro */
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
+      max-width: 95%; /* Ajusta para ocupar até 95% da largura da tela */
   }
 
   #form-contato {
-      display: flex;
-      flex-direction: column;
-      gap: 10px; /* Ajusta o espaçamento */
+      gap: 10px; /* Reduz o espaçamento entre os elementos */
+  }
+
+  #form-contato label {
+      font-size: 0.9em;
   }
 
   #form-contato input,
   #form-contato textarea {
       font-size: 0.9em;
       padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
   }
 
   #form-contato button {
       padding: 8px;
       font-size: 0.9em;
-      background-color: #4CAF50;
-      color: white;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-  }
-
-  #form-contato button:hover {
-      background-color: #45a049;
   }
 
   .footer-content {
       padding: 15px;
-      text-align: center;
-      background-color: #333;
-      color: white;
-  }
-
-  .footer-content .logo-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 10px;
   }
 
   .footer-content .logo-container img {
-      width: 50px; /* Reduz o tamanho do logo */
-      margin-bottom: 5px;
+      width: 50px;
   }
 
   .footer-content .logo-text .name {
@@ -648,12 +645,10 @@ section::before {
 
   .footer-content .logo-text .subtitle {
       font-size: 0.8em;
-      color: #bbb;
   }
 
   .footer-content .direitos {
       font-size: 0.8em;
-      margin-top: 10px;
   }
 
   .footer-content .contato-zap {
