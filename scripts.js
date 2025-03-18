@@ -133,7 +133,7 @@ const videos = [
 
   { id: "exysvRIPjxo", title: "Gets Me Through - Ozzy Osbourn", banda: "Ozzy Osbourne" },
   { id: "Yk1bfdoeQis", title: "Mr Crowley - Ozzy Osbourne", banda: "Ozzy Osbourne" },
-  
+    
   { id: "Z-zU9-hcIYM", title: "Bombtrack - Rage Against the Machine", banda: "Rage Against the Machine" },
   { id: "QXKZo6wSLoY", title: "Renegades of Funk - Rage Against the Machine", banda: "Rage Against the Machine" },
   { id: "071fmEoZZ_k", title: "Roll Right - Rage Against the Machine", banda: "Rage Against the Machine" },
@@ -331,26 +331,33 @@ const videos = [
       document.documentElement.scrollTop = 0;
   });
   
-  // Menu hambúrguer
   document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav');
   
+    // Alternar a visibilidade do menu ao clicar no botão
     menuToggle.addEventListener('click', function () {
-      nav.classList.toggle('active'); // Alterna a classe 'active' no menu
+      nav.classList.toggle('active');
     });
   
-    // Fechar o menu quando um link for clicado
+    // Fechar o menu ao clicar em um link
     const navLinks = document.querySelectorAll('.nav ul li a');
     navLinks.forEach(link => {
       link.addEventListener('click', function () {
-        nav.classList.remove('active'); // Fecha o menu ao clicar em um link
+        nav.classList.remove('active');
       });
     });
-  }); 
-
-
-
+  
+    // Fechar o menu ao clicar fora dele
+    document.addEventListener('click', function (event) {
+      const isClickInsideMenu = nav.contains(event.target);
+      const isClickOnToggle = menuToggle.contains(event.target);
+  
+      if (!isClickInsideMenu && !isClickOnToggle) {
+        nav.classList.remove('active');
+      }
+    });
+  });
 
 
 

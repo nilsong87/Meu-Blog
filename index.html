@@ -7,17 +7,17 @@
     <title>Blog do Guitarrista Nilson Gomes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-image: url(img/Banner\ 6.jpeg); image-rendering: optimizeQuality;">
+<body style="background-image: url(img/Banner\ 8.jpeg); image-rendering: optimizeQuality; background-repeat: no-repeat; background-size: 100%;">
     <header>
         <div class="logo-container">
-            <img src="img/Designer (2).jpeg" alt="Logo" id="logo">
+            <img src="img/Designer (2).jpeg" alt="Logo" id="logo" class="logo">
             <div class="logo-text">
                 <span class="name">Nilson Gomes</span>
                 <span class="subtitle">Guitar</span>
             </div>
         </div>
         <div class="header-content">
-            <h1>Nilson Gomes - Guitarrista</h1>
+            <h1 class="title">Nilson Gomes - Guitarrista</h1>
             <button id="menu-toggle" aria-label="Abrir menu">&#9776;</button>
             <nav class="nav" id="nav">
                 <ul>
@@ -36,7 +36,7 @@
         <p>Olá! Eu sou Nilson Gomes, guitarrista apaixonado por música. Aqui compartilho minha história, equipamentos e vídeos.</p>
     </section>
 
-    <section id="sobre">
+    <section id="sobre" class="sobre">
         <h2>Sobre Mim</h2>
         <p>Comecei a tocar guitarra aos 15 anos e desde então nunca parei. Minhas influências incluem grandes nomes como Jimi Hendrix, Eric Clapton e John Mayer.</p>
         <div class="foto-container1">
@@ -44,7 +44,7 @@
         </div>
     </section>
 
-    <section id="equipamentos">
+    <section id="equipamentos" style="margin-top: 10px;">
         <h2>Meus Equipamentos</h2>
         <div class="equipamentos-container">
             <div class="equipamento">
@@ -171,11 +171,14 @@
         <h2  class="contato2">Contato</h2>
         <form id="form-contato">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <input class="input" type="text" id="nome" name="nome" required>
+            <br>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="mensagem">Mensagem:</label>
-            <textarea class="mensagem" id="mensagem" name="mensagem" required></textarea>
+            <input class="input" type="email" id="email" name="email" required>
+            <br>
+            <label for="mensagem" class="mensagem">Mensagem:</label>
+            <textarea class="input2" id="mensagem" name="mensagem" required></textarea>
+            <br>
             <button type="submit" style="background-color: #a70000;">Enviar</button>
         </form>
     </section>
@@ -196,3 +199,4 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+
