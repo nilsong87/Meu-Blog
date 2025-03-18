@@ -427,7 +427,7 @@ section::before {
   
   #menu-toggle {
     display: block; /* Exibe o botão do menu hambúrguer */
-    font-size: 1.8em; /* Aumenta o tamanho do ícone */
+    font-size: 2em; /* Aumenta o tamanho do ícone */
     margin-left: auto; /* Alinha o botão à direita */
   }
 
@@ -443,6 +443,10 @@ section::before {
     padding: 10px 0;
   }
 
+  .logo {
+    margin-left: 100px;
+  }
+
   .nav.active {
     display: flex; /* Exibe o menu quando ativo */
   }
@@ -452,11 +456,7 @@ section::before {
     gap: 10px; /* Espaçamento entre os itens */
   }
 
-  .nav ul li a {
-    font-size: 1.2em; /* Tamanho da fonte dos links */
-    padding: 10px; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-  }
+  
 
   .title {
     display: none; /* Esconde o título em telas menores */
@@ -477,9 +477,6 @@ section::before {
     max-width: 300px;
   }
 
-  .foto2 {
-    width: 80px;
-  }
 
   .equipamentos-container {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -503,14 +500,19 @@ section::before {
     margin-left: 20%;
   }
 
+  .logo2 {
+    width: 80px;
+  }
+  
+
   .direitos {
     font-size: 0.9em;
-    margin-left: 30%;
+    margin-left: 150px;
   }
 
   .contato-zap {
     font-size: 0.9em;
-    margin-left: 10%;
+    margin-left: 1.5%;
   }
 
 }

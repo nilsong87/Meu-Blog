@@ -335,28 +335,32 @@ const videos = [
     const menuToggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('nav');
   
-    // Alternar a visibilidade do menu ao clicar no botão
-    menuToggle.addEventListener('click', function () {
-      nav.classList.toggle('active');
-    });
-  
-    // Fechar o menu ao clicar em um link
-    const navLinks = document.querySelectorAll('.nav ul li a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function () {
-        nav.classList.remove('active');
+    // Verifica se os elementos existem antes de adicionar os eventos
+    if (menuToggle && nav) {
+      // Alternar a visibilidade do menu ao clicar no botão
+      menuToggle.addEventListener('click', function (event) {
+        event.stopPropagation(); // Impede que o evento de clique se propague para o documento
+        nav.classList.toggle('active');
       });
-    });
   
-    // Fechar o menu ao clicar fora dele
-    document.addEventListener('click', function (event) {
-      const isClickInsideMenu = nav.contains(event.target);
-      const isClickOnToggle = menuToggle.contains(event.target);
+      // Fechar o menu ao clicar em um link
+      const navLinks = document.querySelectorAll('.nav ul li a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+          nav.classList.remove('active');
+        });
+      });
   
-      if (!isClickInsideMenu && !isClickOnToggle) {
-        nav.classList.remove('active');
-      }
-    });
+      // Fechar o menu ao clicar fora dele
+      document.addEventListener('click', function (event) {
+        const isClickInsideMenu = nav.contains(event.target);
+        const isClickOnToggle = menuToggle.contains(event.target);
+  
+        if (!isClickInsideMenu && !isClickOnToggle) {
+          nav.classList.remove('active');
+        }
+      });
+    }
   });
 
 
