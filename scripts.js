@@ -1,5 +1,3 @@
-
-// Lista de vídeos com título e banda/música
 const videos = [
   { id: "OlETRETdx5c", title: "Angry Chair - Alice in Chains", banda: "Alice in Chains" },
   { id: "UpM83IM8Rlc", title: "Blead the Freak - Alice in Chains", banda: "Alice in Chains" },  
@@ -218,43 +216,39 @@ const videos = [
   
 ];
     
-  let currentVideoIndex = 0; // Índice do vídeo atualmente exibido no player
+  let currentVideoIndex = 0; 
   const videoIframe = document.getElementById('youtube-video');
   const playlistButtons = document.getElementById('playlist-buttons');
   const playlistVideos = document.getElementById('playlist-videos');
   const closePlaylistButton = document.getElementById('close-playlist');
   
-  // Função para carregar o vídeo no player principal
   function loadVideo(index) {
       if (index >= 0 && index < videos.length) {
           videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
-          currentVideoIndex = index; // Atualiza o índice do vídeo atual
+          currentVideoIndex = index; 
       }
   }
   
-  // Função que inicializa o vídeo apenas uma vez (sem sobrescrever manualmente)
   function initializeVideo() {
-      if (!videoIframe.src) { // Verifica se o player ainda não foi inicializado
-          loadVideo(0); // Carrega apenas o primeiro vídeo ao iniciar
+      if (!videoIframe.src) { 
+          loadVideo(0); 
       }
   }
   
-  // Verifica o tamanho da tela sem alterar o vídeo já escolhido pelo usuário
   function checkScreenSize() {
       if (window.innerWidth <= 768 && !videoIframe.src) {
-          initializeVideo(); // Somente inicializa se nenhum vídeo estiver carregado
+          initializeVideo(); 
       }
   }
   
-  // Evento: Verificar o tamanho da tela ao carregar a página
+  
   window.addEventListener('load', () => {
-      initializeVideo(); // Inicializa o vídeo ao carregar a página
+      initializeVideo(); 
   });
   
-  // Evento: Verificar o tamanho da tela ao redimensionar
+  
   window.addEventListener('resize', checkScreenSize);
   
-  // Controles de navegação
   document.getElementById('prev-video').addEventListener('click', () => {
       if (currentVideoIndex > 0) {
           loadVideo(currentVideoIndex - 1);
@@ -267,7 +261,6 @@ const videos = [
       }
   });
   
-  // Lógica para carregar playlists
   const playlists = {};
   videos.forEach(video => {
       if (!playlists[video.banda]) {
@@ -276,7 +269,6 @@ const videos = [
       playlists[video.banda].push(video);
   });
   
-  // Criação dos botões de playlists
   Object.keys(playlists).forEach(banda => {
       const button = document.createElement('button');
       button.textContent = banda;
@@ -286,9 +278,8 @@ const videos = [
       playlistButtons.appendChild(button);
   });
   
-  // Carregar vídeos de uma playlist específica
   function loadPlaylist(banda) {
-      playlistVideos.innerHTML = ''; // Limpa a lista de vídeos antes de exibir
+      playlistVideos.innerHTML = ''; 
       playlists[banda].forEach((video) => {
           const videoItem = document.createElement('div');
           videoItem.className = 'video-item';
@@ -296,24 +287,22 @@ const videos = [
           videoItem.addEventListener('click', () => {
               const selectedIndex = videos.findIndex(v => v.id === video.id);
               if (selectedIndex !== -1) {
-                  loadVideo(selectedIndex); // Carrega o vídeo selecionado no player
-                  closePlaylist(); // Fecha a playlist após o clique
+                  loadVideo(selectedIndex); 
+                  closePlaylist(); 
               }
           });
           playlistVideos.appendChild(videoItem);
       });
-      closePlaylistButton.style.display = 'block'; // Exibe o botão para fechar a playlist
+      closePlaylistButton.style.display = 'block'; 
   }
   
-  // Função para fechar a playlist
   function closePlaylist() {
-      playlistVideos.innerHTML = ''; // Limpa a lista de vídeos
-      closePlaylistButton.style.display = 'none'; // Esconde o botão de fechar
+      playlistVideos.innerHTML = ''; 
+      closePlaylistButton.style.display = 'none'; 
   }
   
   closePlaylistButton.addEventListener('click', closePlaylist);
-  
-  // Botão "Voltar ao topo"
+    
   window.onscroll = function () {
       scrollFunction();
   };
@@ -331,38 +320,4 @@ const videos = [
       document.documentElement.scrollTop = 0;
   });
   
-  document.addEventListener('DOMContentLoaded', function () {
-    const menuToggle = document.getElementById('menu-toggle');
-    const nav = document.getElementById('nav');
   
-    // Verifica se os elementos existem antes de adicionar os eventos
-    if (menuToggle && nav) {
-      // Alternar a visibilidade do menu ao clicar no botão
-      menuToggle.addEventListener('click', function (event) {
-        event.stopPropagation(); // Impede que o evento de clique se propague para o documento
-        nav.classList.toggle('active');
-      });
-  
-      // Fechar o menu ao clicar em um link
-      const navLinks = document.querySelectorAll('.nav ul li a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', function () {
-          nav.classList.remove('active');
-        });
-      });
-  
-      // Fechar o menu ao clicar fora dele
-      document.addEventListener('click', function (event) {
-        const isClickInsideMenu = nav.contains(event.target);
-        const isClickOnToggle = menuToggle.contains(event.target);
-  
-        if (!isClickInsideMenu && !isClickOnToggle) {
-          nav.classList.remove('active');
-        }
-      });
-    }
-  });
-
-
-
-
