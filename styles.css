@@ -93,6 +93,7 @@ section {
 p {
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
+  text-indent: 50px;
 }
 
 h2 {
@@ -326,6 +327,7 @@ button[type="submit"]:hover {
 }
 
 .footer-content .direitos {
+  margin-left: -50px;
   text-align: center;
   margin-top: 5px;
   font-size: 0.9rem;
@@ -333,6 +335,7 @@ button[type="submit"]:hover {
 }
 
 .footer-content .contato-zap {
+  margin-left: -50px;
   text-align: center;
   margin-top: 2.5px;
   font-size: 0.9rem;
