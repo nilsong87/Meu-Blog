@@ -13,9 +13,15 @@ const videos = [
   { id: "qAZX9ja1OXY", title: "The Devils You Know - Anthrax", banda: "Anthrax" },
 
   { id: "5ly7kWwNtc4", title: "N.I.B - Black Sabbath", banda: "Black Sabbath" },
-
+  
+  { id: "3d1WW7BpyCk", title: "All My Life - Foo Fighters", banda: "Foo Fighters" },
+  { id: "HTnFgz53Xow", title: "Best Of You - Foo Fighters", banda: "Foo Fighters" },
   { id: "anlKUavRTYA", title: "Everlong - Foo Fighters", banda: "Foo Fighters" },
-
+  { id: "_MMcZ28lb_8", title: "My Hero - Foo Fighters", banda: "Foo Fighters" },
+  { id: "RG0iH0thinU", title: "The Pretenders - Foo Fighters", banda: "Foo Fighters" },
+  { id: "v8SfvajSI5k", title: "Time Like These - Foo Fighters", banda: "Foo Fighters" },
+  { id: "l2JdZY4KzOI", title: "Walk - Foo Fighters", banda: "Foo Fighters" },
+     
   { id: "AxBOta7O8M8", title: "Fear of the Dark - Iron Maiden", banda: "Iron Maiden" },
   { id: "Z1TLUL-KC2M", title: "Ghost Of The Navigator - Iron Maiden", banda: "Iron Maiden" },
   { id: "v45pYTFApKE", title: "Powerslave - Iron Maiden", banda: "Iron Maiden" },
