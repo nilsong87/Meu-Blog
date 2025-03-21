@@ -11,13 +11,15 @@ const videos = [
   { id: "TTFI4ux4J5A", title: "Sabbath Blood Sabbath - Anthrax", banda: "Anthrax" },
   { id: "TRxxp6cUsSo", title: "She - Anthrax", banda: "Anthrax" },
   { id: "qAZX9ja1OXY", title: "The Devils You Know - Anthrax", banda: "Anthrax" },
-
+  
+  { id: "dGf63xvOczM", title: "Iron Man - Black Sabbath", banda: "Black Sabbath" },
   { id: "5ly7kWwNtc4", title: "N.I.B - Black Sabbath", banda: "Black Sabbath" },
   
   { id: "3d1WW7BpyCk", title: "All My Life - Foo Fighters", banda: "Foo Fighters" },
   { id: "HTnFgz53Xow", title: "Best Of You - Foo Fighters", banda: "Foo Fighters" },
   { id: "anlKUavRTYA", title: "Everlong - Foo Fighters", banda: "Foo Fighters" },
   { id: "_MMcZ28lb_8", title: "My Hero - Foo Fighters", banda: "Foo Fighters" },
+  { id: "AxMECTT8ogk", title: "Stranger Things Have Happened - Foo Fighters", banda: "Foo Fighters" },
   { id: "RG0iH0thinU", title: "The Pretenders - Foo Fighters", banda: "Foo Fighters" },
   { id: "v8SfvajSI5k", title: "Time Like These - Foo Fighters", banda: "Foo Fighters" },
   { id: "l2JdZY4KzOI", title: "Walk - Foo Fighters", banda: "Foo Fighters" },
