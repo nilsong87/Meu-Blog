@@ -220,8 +220,7 @@ const videos = [
   { id: "nXOxjcVn4fs", title: "Prison Song - System of a Down", banda: "System of a Down" },
   { id: "kqhQJb5Y6xo", title: "Psyco - System of a Down", banda: "System of a Down" },
   { id: "W0H4EyNfusA", title: "Violent Pornography - System of a Down", banda: "System of a Down" },
- 
-  
+   
 ];
     
   let currentVideoIndex = 0; 
