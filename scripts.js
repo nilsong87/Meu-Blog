@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Lista de vídeos (adicione todos os seus vídeos aqui)
+    // Lista de vídeos 
 const videos = [
   { id: "OlETRETdx5c", title: "Angry Chair - Alice in Chains", banda: "Alice in Chains" },
   { id: "UpM83IM8Rlc", title: "Blead the Freak - Alice in Chains", banda: "Alice in Chains" },  
