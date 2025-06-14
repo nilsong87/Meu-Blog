@@ -453,6 +453,41 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
+function randomBetween(a, b) {
+  return a + Math.random() * (b - a);
+}
+
+const ghost = document.querySelector('.ghost-figure');
+
+function moveGhost() {
+  if (!ghost) return;
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  // Limites para não sair da tela
+  const maxLeft = vw - ghost.offsetWidth;
+  const maxTop = vh - ghost.offsetHeight;
+
+  const left = randomBetween(0.1 * maxLeft, 0.9 * maxLeft);
+  const top = randomBetween(0.1 * maxTop, 0.8 * maxTop);
+  const scale = randomBetween(0.95, 1.08);
+  const duration = randomBetween(3, 7);
+
+  ghost.style.transition = `left ${duration}s ease-in-out, top ${duration}s ease-in-out, transform ${duration}s ease-in-out, opacity 2s`;
+  ghost.style.left = `${left}px`;
+  ghost.style.top = `${top}px`;
+  ghost.style.transform = `translate(-50%, 0) scale(${scale})`;
+
+  // Fade in/out aleatório
+  ghost.style.opacity = randomBetween(0.10, 0.28);
+
+  setTimeout(moveGhost, duration * 1000);
+}
+
+// Inicia o movimento após o carregamento
+window.addEventListener('DOMContentLoaded', moveGhost);
+
+
 
 
 
