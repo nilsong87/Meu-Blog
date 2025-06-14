@@ -485,4 +485,4 @@ window.addEventListener('DOMContentLoaded', moveGhost);
 // ==========================
 // Mensagem de boas-vindas no console
 // ==========================
-console.log("%cBem-vindo ao Blog de Nilson Gomes! 🚀", "color: #2e6cf6; font-size: 1.2em; font-weight: bold;");
+console.log("%cBem-vindo ao Blog de Nilson Gomes! 🚀", "color:rgb(48, 114, 255); font-size: 1.2em; font-weight: bold;");
