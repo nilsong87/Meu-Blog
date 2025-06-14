@@ -3,223 +3,579 @@
 
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Nilson Gomes Guitar | Guitarrista de Metal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link rel="icon" href="img/favicon.png" type="image/png">
-    <title>Blog do Guitarrista Nilson Gomes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="img/Designer (2).jpeg" alt="Logo" id="logo" class="logo">
-            <h1 class="title">Nilson Gomes Guitar</h1>
+    <div class="ghost-bg">
+        <div class="ghost-figure"></div>
+    </div>
+    <!-- Cabeçalho -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="img/Designer (2).jpeg" alt="Logo Nilson Gomes Guitar" class="logo">
+                <h1 class="title">Nilson Gomes <span>Guitar</span></h1>
+            </div>
+
+            <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+
+            <nav class="nav" id="nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#sobre" class="nav-link"><i class="fas fa-user"></i> Sobre</a></li>
+                    <li><a href="#equipamentos" class="nav-link"><i class="fas fa-guitar"></i> Equipamentos</a></li>
+                    <li><a href="#videos" class="nav-link"><i class="fas fa-play"></i> Vídeos</a></li>
+                    <li><a href="#contato" class="nav-link"><i class="fas fa-envelope"></i> Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="nav" id="nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#sobre">Sobre Mim</a></li>
-                <li><a href="#equipamentos">Equipamentos</a></li>
-                <li><a href="#videos">Vídeos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="home" class="home">
-        <h2>Bem-vindo ao meu blog!</h2>
-        <br>
-        <p> Bem-vindo ao meu blog, dedicado à minha paixão pela guitarra e pela música! Aqui, compartilho vídeos
-            exclusivos de covers de bandas de metal, rock e outros estilos, sempre com meu toque pessoal. Além disso,
-            mostro o "backstage" do meu universo musical, exibindo equipamentos como guitarras, pedais, fontes de pedais
-            e placa de áudio externa.</p>
-        <br>
-        <p>
-            Este espaço é para fãs de música e guitarristas trocarem ideias, explorarem setups e aprenderem sobre
-            equipamentos. O foco principal são os vídeos de covers, mas espero que este blog se torne um ponto de
-            encontro para todos que compartilham essa paixão pela música. Explore e vamos nessa jornada sonora juntos!
-        </p>
+    <!-- Conteúdo Principal -->
+    <main id="main-content">
+        <!-- Seção Hero -->
+        <section id="home" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h2 class="hero-title">Bem-vindo ao meu mundo musical</h2>
+                <p class="hero-subtitle">Guitarrista de metal, rock e muito mais</p>
+                <a href="#videos" class="hero-button">Assista meus vídeos <i class="fas fa-arrow-down"></i></a>
+            </div>
 
-    </section>
+            <div class="scroll-down">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </section>
 
-    <section id="sobre" class="sobre">
-        <h2>Sobre Mim</h2>
-        <br>
-        <p> Olá! Sou Nilson Gomes, e minha paixão pela música começou aos 15 anos, quando comecei a estudar guitarra.
-            Desde então, mergulhei nos sons do metal e do rock, inspirando-me em grandes guitarristas como James
-            Hetfield, Kirk Hammett, Dave Mustaine, Marty Friedman, Kerry King, Jeff Hanneman, Zakk Wylde, Tony Iommi,
-            Dimebag Darrell e Randy Rhoads. Além da música, sou administrador e programador front-end, áreas que me
-            permitem ser criativo, analítico e estratégico, complementando minha jornada profissional e pessoal.</p>
-        <br>
-        <div class="foto-container1">
-            <img src="img/nilson gomes.png" alt="Foto do Guitarrista" class="foto">
-        </div>
-    </section>
+        <!-- Seção Sobre -->
+        <section id="sobre" class="section about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Sobre <span>Mim</span></h2>
+                    <div class="section-divider"></div>
+                </div>
 
-    <section id="equipamentos" style="margin-top: 10px;">
-        <h2>Meus Equipamentos</h2>
-        <br>
-        <div class="equipamentos-container">
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/guitarra.webp" alt="Minha Guitarra" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiymY2xm5CMAxVlakgAHaUfAagYABAlGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v95GbYd7zaLHd9giOFCBfAQ_Anv8UU_D-oSReixaIymUNfBKUlbE4AaAtsrEALw_wcB&ohost=www.google.com&cid=CAESVeD2_YCAPM7IvQwLANq8JMagLUog10J9HULKAqxsTIjdewWCNG-sYlBjbqO7hJ5XBDNmvASqp2xJjlXIpdT6Q8KOizQI27z-4u8y_MizXtsjMxz1m94&sig=AOD64_0vIstoo8YK2i-PQFgvGI5piAhVog&ctype=5&q=&ved=2ahUKEwjgqYmxm5CMAxXYrZUCHXkUIlkQ9aACKAB6BAgGEDI&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Guitarra:</strong> Strinberg Les Paul LPS-230
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/guitarra2.png" alt="Minha Guitarra" class="equip">
-                </div>
-                <p>
-                    <a href="https://produto.mercadolivre.com.br/MLB-3025839170-strinberg-les-paul-clp79-modificada-willaudio-_JM?searchVariation=176027481822#polycard_client=search-nordic&searchVariation=176027481822&position=31&search_layout=grid&type=item&tracking_id=c0674d82-5af8-4b58-893e-f5c7a42d899f"
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Guitarra:</strong> Strinberg Les Paul CLP-79
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/cuvave.jpg" alt="Pedaleira Cuvave Baby" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi5tqeWnZCMAxUHRUgAHXpqFp8YABAcGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v97mkCF3auzyIHoeAvRAWt84GQLxDNmDF4CbSzJ3MpozOqZrlL5Y_caAmaTEALw_wcB&ohost=www.google.com&cid=CAESVeD295basRuZ1ThmaK2Obg1nIgumnWtQ6o1fcyVfZjMdzXRp1irlC1hsrnu30x2qFtH2Mw0iVaQB4Xzba8Hlcci3eFS-AdBHtM7gx3Fv96TTKtz1uBM&sig=AOD64_0_Bf8Khf3FjLndgXnKWV27q-_88w&ctype=5&q=&ved=2ahUKEwi9wqOWnZCMAxV6rpUCHXRUGmoQ9aACKAB6BAgIEBM&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Pedal:</strong> Cuvave Baby
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/equalizer.jpg" alt="Pedal Irin Band Controller" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjIuP-nnZCMAxXpZ0gAHSDKG4cYABALGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v_sdR6R6aqchvPRt8jBweWYcN7m70kiCCHlz8ZDoML0g0mUpw-6uAQaAhyoEALw_wcB&ohost=www.google.com&cid=CAESVeD2aKpNY5BJHsgvqMGVmO_m_v_Fjgyw3Jy4i7DYMeXVBJr8gIOsZHvpvDEe0BocYP6J6lhW1fPvLAqm6pB6k8TzDosh9y7wRx4kSEzBgzB9MPfhrDo&sig=AOD64_0AcNZMU-oxt3bpLGADrOkI0ZJSgg&ctype=5&q=&ved=2ahUKEwjYpPunnZCMAxWsppUCHZ1tB2AQ9aACKAB6BAgHEEY&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Pedal:</strong> Irin Band Controller
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/extreme.avif" alt="Pedal Irin Extreme Metal" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjK3Mq3nZCMAxUUXkgAHeEYNwIYABAEGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8st2htmsAhb4nbYu_6XcutYCQbKrv2mbgLtTXTiGRh7PlAN03Un30aAlOKEALw_wcB&ohost=www.google.com&cid=CAESVeD2iQFHtY63YQ3zAEmjHq1KL_k_4403Mtk1h8VrOTKMvvsYgWozGoXj2glMP62hoz8iWQWzNd3AWzcE1mLKivwTUO1_aqLW-x4e2NVyKr35ezyoYB0&sig=AOD64_0YaCJpk-66QKJ8-Rd886SVzAWD5A&ctype=5&q=&ved=2ahUKEwjvwsa3nZCMAxXyqZUCHdwqNQgQ9aACKAB6BAgFEEM&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Pedal:</strong> Irin Extreme Metal
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/overdriver.png" alt="Pedal Movall Green Martian" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiizOLInZCMAxWIWkgAHWipKEQYABAIGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8KdyrrRKo7fkrx7cRWTUZYWAOaT-u_XnGUmehz40UH052buelb8fUaAhK8EALw_wcB&ohost=www.google.com&cid=CAESVeD2SZyh4-XkcwFcA9kVy4OWdd7ZyMcnJJ7ipo-DWnF4Y0Rc4Pvg1fmoxcckeSpiL7ABzbemuQAGiVDzmCDsNlEtOta4BAgTHXo5X6Zk5vXhCuYzHcE&sig=AOD64_0_qfFjaT_E8ZoDVsV_Wn12tCLOUg&ctype=5&q=&ved=2ahUKEwjM_t3InZCMAxXwp5UCHUBZPTYQ9aACKAB6BAgEECY&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Pedal:</strong> Movall Green Martian
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/delay.png" alt="Pedal M-vave Elemental" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjajeHanZCMAxVDDEQIHUibDSsYABAEGgJkeg&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v-3PZ91vs7El7Ya1VH25KhswDf6B6hb-ZVxHJ8z45QhI04l1-ifDowaAhwcEALw_wcB&ohost=www.google.com&cid=CAESVeD2VO74b1n6BaMXOvDYg1p9IODl1A0181qEBtulaiEvuxB2ZO2-k-wlNRoxngC4MKC5-3E_Pb5Eep6SMdsr3HP0iNo1ddgyVxWhPUTARjG5dVB_S7M&sig=AOD64_2eJNVC7-kMVqNHx5_7dtVwcqXP8A&ctype=5&q=&ved=2ahUKEwiI1NjanZCMAxVfppUCHYTIPBgQ9aACKAB6BAgFEBE&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Pedal:</strong> M-vave Elemental
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/amp.png" alt="Meu Amplificador" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjZ1IronZCMAxVRQkgAHVHjNZ8YABAGGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v_izRBX_vwGry-oYa6EAZGZK1QXXQ3GAkHEAEQyC7y9Ee0U6iLw0iwaAqMfEALw_wcB&ohost=www.google.com&cid=CAESVeD2wSbFR-E328dZH1UGnJL85m4HCwJ_G9fKQTk3GOsT8UVe5RHPIyS_0Gb9nthM8mk1gJQXgcfHIcR9goYfaESn6sFdHmN3Hg0CNiJ0Svjdm3HOYbs&sig=AOD64_0aqcNl6-c75yrDyTXZ7iMav93KJg&ctype=5&q=&ved=2ahUKEwjapYbonZCMAxX3rZUCHdpLFmQQ9aACKAB6BAgFEBY&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Amplificador:</strong> Marshall MG-15CF
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/placa.png" alt="Minha Placa de Audio" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjPqL37nZCMAxX3X0gAHeVpOgoYABAHGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v9m7a2xJDrVTOJ01x2YKkRo8FSirRxtLE3mZLyhGYuYnx-r4_o20l8aAlKAEALw_wcB&ohost=www.google.com&cid=CAESVeD2Wc5mmbMzhqYF1CEqQJK9cPA2LZW2JEFRh0oonjZbOqNo0XkRrHOhvRMdg9fMhG9LE4VMItu0dL5sRwkVCoQXkSD7PeVwWjfuJY574wkdD5KVWwc&sig=AOD64_2EgOqTOAy4na4XD25la9AqeSQBcw&ctype=5&q=&ved=2ahUKEwjRkLn7nZCMAxWAqJUCHSg-DWIQ9aACKAB6BAgIEBA&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Placa de Audio:</strong> Teyun Q-22 USB
-                    </a>
-                </p>
-            </div>
-            <div class="equipamento">
-                <div class="foto-container">
-                    <img src="img/fonte.png" alt="Minha Fonte" class="equip">
-                </div>
-                <p>
-                    <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjY-aaZnpCMAxWFW0gAHd8nF4gYABANGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8vioy6wsc6DHE43nuVPqu4JDzhUlQvGRyxox8ex4XT_ujgo8n9xngaAo4CEALw_wcB&ohost=www.google.com&cid=CAESVeD29TADYloqjZ2k1ysUBZ5M00sxstAGrZcbDWP0IISlBEZP8IZEc-sVxgtHKEW354okYWta5fvzOYbI6NSY_Isa8ZB0S4cj2oH_t7IhaozlxgAA8GA&sig=AOD64_1F5zKZP5Eg8t4-JKZkQgBqpE29yQ&ctype=5&q=&ved=2ahUKEwjfp6KZnpCMAxX_uJUCHSCTAUkQ9aACKAB6BAgGEA4&adurl="
-                        target="_blank" rel="noopener noreferrer">
-                        <strong>Fonte:</strong> M-Vave 9VTS
-                    </a>
-                </p>
-            </div>
-        </div>
-    </section>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="img/nilson gomes.png" alt="Nilson Gomes tocando guitarra" class="profile-image">
+                        <div class="image-border"></div>
+                    </div>
 
-    <section id="videos">
-        <h2>Vídeos</h2>
-        <h1>Os Videos das Playlists serão exibidos abaixo dos nomes das playlists Covers!🤙</h1>
-        <div class="video-player">
-            <iframe id="youtube-video" width="560" height="315" src="https://www.youtube.com/embed/IZs7TB7hwVU"
-                frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-controls">
-            <button id="prev-video">Anterior</button>
-            <button id="next-video">Próximo</button>
-        </div>
-        <div id="playlists">
-            <h3>Playlists Covers</h3>
-            <div id="playlist-buttons"></div>
-            <button id="close-playlist" style="display: none;">Fechar Playlist</button>
-            <div id="playlist-videos"></div>
-        </div>
-    </section>
+                    <div class="about-text">
+                        <p>&emsp;Olá! Sou Nilson Gomes, e minha paixão pela música começou aos 15 anos, quando comecei a
+                            estudar guitarra. Desde então, mergulhei nos sons do metal e do rock, inspirando-me em
+                            grandes guitarristas como James Hetfield, Kirk Hammett, Dave Mustaine, Marty Friedman, Kerry
+                            King, Jeff Hanneman, Zakk Wylde, Tony Iommi, Dimebag Darrell e Randy Rhoads.</p>
+                        <p>&emsp;Além da música, sou administrador e programador front-end, áreas que me permitem ser
+                            criativo, analítico e estratégico, complementando minha jornada profissional e pessoal.</p>
 
-    <section id="contato" class="contato">
-        <h2 class="contato2">Contato</h2>
-        <form id="form-contato">
-            <label for="nome">Nome:</label>
-            <input class="input" type="text" id="nome" name="nome" required>
-            <br>
-            <label for="email">Email:</label>
-            <input class="input" type="email" id="email" name="email" required>
-            <br>
-            <label for="mensagem" class="mensagem">Mensagem:</label>
-            <textarea class="input2" id="mensagem" name="mensagem" required></textarea>
-            <br>
-            <button type="submit" style="background-color: #a70000;">Enviar</button>
-        </form>
-    </section>
+                        <div class="influences">
+                            <h3>Minhas Influências:</h3>
+                            <div class="influences-grid">
+                                <a href="https://www.youtube.com/@metallica" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/james.jpg" alt="James Hetfield" class="influence-img">
+                                        <span>James Hetfield</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@slayer" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/jeff.jpg" alt="Jeff Hanneman" class="influence-img">
+                                        <span>Jeff Hanneman</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@pantera" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/darrell.jpg" alt="Dimebag Darrell" class="influence-img">
+                                        <span>Dimebag Darrell</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@megadeth" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/dave.webp" alt="Dave Mustaine" class="influence-img">
+                                        <span>Dave Mustaine</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@kirkhammett7543" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/kirk.jpg" alt="Kirk Hammett" class="influence-img">
+                                        <span>Kirk Hammett</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@KerryKingOfficial" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/kerry.jpg" alt="Kerry King" class="influence-img">
+                                        <span>Kerry King</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@zakkwyldetv" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/zakk.jpg" alt="Zakk Wylde" class="influence-img">
+                                        <span>Zakk Wylde</span>
+                                    </div>
+                                </a>
+                                <a href="https://https://www.youtube.com/@JohnPetrucciofficial" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/john.webp" alt="John Petrucci" class="influence-img">
+                                        <span>John Petrucci</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCsObT2rCuM4f9ABCmHCEVBw" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/morello.jpg" alt="Tom Morello" class="influence-img">
+                                        <span>Tom Morello</span>
+                                    </div>
+                                </a>
+                                <a href="https://www.youtube.com/@ScottIanOfficial" target="_blank" rel="noopener noreferrer">
+                                    <div class="influence-item">
+                                        <img src="/img/scott.jpeg" alt="Scott Ian" class="influence-img">
+                                        <span>Scott Ian</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <footer class="footer-content">
-        <div class="logo-container2">
-            <img src="img/Designer (2).jpeg" class="logo2" alt="Logo2" id="logo2">
-            <div class="logo-text">
-                <span class="name">Nilson Gomes Guitar</span>
+        <!-- Seção Equipamentos -->
+        <section id="equipamentos" class="section equipment-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Meus <span>Equipamentos</span></h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">Conheça os equipamentos que uso para criar meu som</p>
+                </div>
+
+                <div class="equipment-grid">
+                    <!-- Guitarra 1 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/guitarra.webp" alt="Strinberg Les Paul LPS-230">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiymY2xm5CMAxVlakgAHaUfAagYABAlGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v95GbYd7zaLHd9giOFCBfAQ_Anv8UU_D-oSReixaIymUNfBKUlbE4AaAtsrEALw_wcB&ohost=www.google.com&cid=CAESVeD2_YCAPM7IvQwLANq8JMagLUog10J9HULKAqxsTIjdewWCNG-sYlBjbqO7hJ5XBDNmvASqp2xJjlXIpdT6Q8KOizQI27z-4u8y_MizXtsjMxz1m94&sig=AOD64_0vIstoo8YK2i-PQFgvGI5piAhVog&ctype=5&q=&ved=2ahUKEwjgqYmxm5CMAxXYrZUCHXkUIlkQ9aACKAB6BAgGEDI&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Strinberg Les Paul LPS-230</h3>
+                            <p class="equipment-type">Guitarra</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guitarra 2 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/guitarra2.png" alt="Strinberg Les Paul CLP-79">
+                            <div class="equipment-overlay">
+                                <a href="https://produto.mercadolivre.com.br/MLB-3025839170-strinberg-les-paul-clp79-modificada-willaudio-_JM?searchVariation=176027481822#polycard_client=search-nordic&searchVariation=176027481822&position=31&search_layout=grid&type=item&tracking_id=c0674d82-5af8-4b58-893e-f5c7a42d899f"
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Strinberg Les Paul CLP-79</h3>
+                            <p class="equipment-type">Guitarra</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedal 1 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/cuvave.jpg" alt="Pedal Cuvave Baby">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwi5tqeWnZCMAxUHRUgAHXpqFp8YABAcGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v97mkCF3auzyIHoeAvRAWt84GQLxDNmDF4CbSzJ3MpozOqZrlL5Y_caAmaTEALw_wcB&ohost=www.google.com&cid=CAESVeD295basRuZ1ThmaK2Obg1nIgumnWtQ6o1fcyVfZjMdzXRp1irlC1hsrnu30x2qFtH2Mw0iVaQB4Xzba8Hlcci3eFS-AdBHtM7gx3Fv96TTKtz1uBM&sig=AOD64_0_Bf8Khf3FjLndgXnKWV27q-_88w&ctype=5&q=&ved=2ahUKEwi9wqOWnZCMAxV6rpUCHXRUGmoQ9aACKAB6BAgIEBM&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Cuvave Baby</h3>
+                            <p class="equipment-type">Pedal</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedal 2 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/equalizer.jpg" alt="Irin Band Controller">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjIuP-nnZCMAxXpZ0gAHSDKG4cYABALGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v_sdR6R6aqchvPRt8jBweWYcN7m70kiCCHlz8ZDoML0g0mUpw-6uAQaAhyoEALw_wcB&ohost=www.google.com&cid=CAESVeD2aKpNY5BJHsgvqMGVmO_m_v_Fjgyw3Jy4i7DYMeXVBJr8gIOsZHvpvDEe0BocYP6J6lhW1fPvLAqm6pB6k8TzDosh9y7wRx4kSEzBgzB9MPfhrDo&sig=AOD64_0AcNZMU-oxt3bpLGADrOkI0ZJSgg&ctype=5&q=&ved=2ahUKEwjYpPunnZCMAxWsppUCHZ1tB2AQ9aACKAB6BAgHEEY&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Irin Band Controller</h3>
+                            <p class="equipment-type">Pedal</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedal 3 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/extreme.avif" alt="Irin Extreme Metal">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjK3Mq3nZCMAxUUXkgAHeEYNwIYABAEGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8st2htmsAhb4nbYu_6XcutYCQbKrv2mbgLtTXTiGRh7PlAN03Un30aAlOKEALw_wcB&ohost=www.google.com&cid=CAESVeD2iQFHtY63YQ3zAEmjHq1KL_k_4403Mtk1h8VrOTKMvvsYgWozGoXj2glMP62hoz8iWQWzNd3AWzcE1mLKivwTUO1_aqLW-x4e2NVyKr35ezyoYB0&sig=AOD64_0YaCJpk-66QKJ8-Rd886SVzAWD5A&ctype=5&q=&ved=2ahUKEwjvwsa3nZCMAxXyqZUCHdwqNQgQ9aACKAB6BAgFEEM&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Irin Extreme Metal</h3>
+                            <p class="equipment-type">Pedal</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedal 4 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/overdriver.png" alt="Movall Green Martian">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwiizOLInZCMAxWIWkgAHWipKEQYABAIGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8KdyrrRKo7fkrx7cRWTUZYWAOaT-u_XnGUmehz40UH052buelb8fUaAhK8EALw_wcB&ohost=www.google.com&cid=CAESVeD2SZyh4-XkcwFcA9kVy4OWdd7ZyMcnJJ7ipo-DWnF4Y0Rc4Pvg1fmoxcckeSpiL7ABzbemuQAGiVDzmCDsNlEtOta4BAgTHXo5X6Zk5vXhCuYzHcE&sig=AOD64_0_qfFjaT_E8ZoDVsV_Wn12tCLOUg&ctype=5&q=&ved=2ahUKEwjM_t3InZCMAxXwp5UCHUBZPTYQ9aACKAB6BAgEECY&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Movall Green Martian</h3>
+                            <p class="equipment-type">Pedal</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pedal 5 -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/delay.png" alt="M-vave Elemental">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjajeHanZCMAxVDDEQIHUibDSsYABAEGgJkeg&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v-3PZ91vs7El7Ya1VH25KhswDf6B6hb-ZVxHJ8z45QhI04l1-ifDowaAhwcEALw_wcB&ohost=www.google.com&cid=CAESVeD2VO74b1n6BaMXOvDYg1p9IODl1A0181qEBtulaiEvuxB2ZO2-k-wlNRoxngC4MKC5-3E_Pb5Eep6SMdsr3HP0iNo1ddgyVxWhPUTARjG5dVB_S7M&sig=AOD64_2eJNVC7-kMVqNHx5_7dtVwcqXP8A&ctype=5&q=&ved=2ahUKEwiI1NjanZCMAxVfppUCHYTIPBgQ9aACKAB6BAgFEBE&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>M-vave Elemental</h3>
+                            <p class="equipment-type">Pedal</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Amplificador -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/amp.png" alt="Marshall MG-15CF">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjZ1IronZCMAxVRQkgAHVHjNZ8YABAGGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v_izRBX_vwGry-oYa6EAZGZK1QXXQ3GAkHEAEQyC7y9Ee0U6iLw0iwaAqMfEALw_wcB&ohost=www.google.com&cid=CAESVeD2wSbFR-E328dZH1UGnJL85m4HCwJ_G9fKQTk3GOsT8UVe5RHPIyS_0Gb9nthM8mk1gJQXgcfHIcR9goYfaESn6sFdHmN3Hg0CNiJ0Svjdm3HOYbs&sig=AOD64_0aqcNl6-c75yrDyTXZ7iMav93KJg&ctype=5&q=&ved=2ahUKEwjapYbonZCMAxX3rZUCHdpLFmQQ9aACKAB6BAgFEBY&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Marshall MG-15CF</h3>
+                            <p class="equipment-type">Amplificador</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placa de Audio -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/placa.png" alt="Teyun Q-22 USB">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjPqL37nZCMAxX3X0gAHeVpOgoYABAHGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v9m7a2xJDrVTOJ01x2YKkRo8FSirRxtLE3mZLyhGYuYnx-r4_o20l8aAlKAEALw_wcB&ohost=www.google.com&cid=CAESVeD2Wc5mmbMzhqYF1CEqQJK9cPA2LZW2JEFRh0oonjZbOqNo0XkRrHOhvRMdg9fMhG9LE4VMItu0dL5sRwkVCoQXkSD7PeVwWjfuJY574wkdD5KVWwc&sig=AOD64_2EgOqTOAy4na4XD25la9AqeSQBcw&ctype=5&q=&ved=2ahUKEwjRkLn7nZCMAxWAqJUCHSg-DWIQ9aACKAB6BAgIEBA&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>Teyun Q-22 USB</h3>
+                            <p class="equipment-type">Placa de Audio</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fonte -->
+                    <div class="equipment-card">
+                        <div class="equipment-image">
+                            <img src="img/fonte.png" alt="M-Vave 9VTS">
+                            <div class="equipment-overlay">
+                                <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjY-aaZnpCMAxWFW0gAHd8nF4gYABANGgJjZQ&co=1&gclid=Cj0KCQjw7dm-BhCoARIsALFk4v8vioy6wsc6DHE43nuVPqu4JDzhUlQvGRyxox8ex4XT_ujgo8n9xngaAo4CEALw_wcB&ohost=www.google.com&cid=CAESVeD29TADYloqjZ2k1ysUBZ5M00sxstAGrZcbDWP0IISlBEZP8IZEc-sVxgtHKEW354okYWta5fvzOYbI6NSY_Isa8ZB0S4cj2oH_t7IhaozlxgAA8GA&sig=AOD64_1F5zKZP5Eg8t4-JKZkQgBqpE29yQ&ctype=5&q=&ved=2ahUKEwjfp6KZnpCMAxX_uJUCHSCTAUkQ9aACKAB6BAgGEA4&adurl="
+                                    target="_blank" class="equipment-link">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="equipment-info">
+                            <h3>M-Vave 9VTS</h3>
+                            <p class="equipment-type">Fonte</p>
+                            <div class="equipment-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- outros equipamentos seguindo o mesmo padrão -->
+
+                </div>
+
+                <div class="equipment-cta">
+                    <p>Quer saber mais sobre meu setup completo?</p>
+                    <a href="#contato" class="cta-button">Entre em contato <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Vídeos -->
+        <section id="videos" class="section video-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Meus <span>Vídeos</span></h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">Confira meus covers e performances</p>
+                </div>
+
+                <div class="video-player-container">
+                    <div class="video-player">
+                        <iframe id="youtube-video" width="560" height="315" src="" frameborder="0"
+                            allowfullscreen></iframe>
+                    </div>
+
+                    <div class="video-controls">
+                        <button id="prev-video" class="video-button">
+                            <i class="fas fa-step-backward"></i> Anterior
+                        </button>
+
+                        <button id="next-video" class="video-button">
+                            Próximo <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Adicione este bloco onde deseja exibir os botões de playlists -->
+                <h3 class="playlist-title">Minhas Playlists</h3>
+                <div id="playlist-buttons" class="playlist-buttons"></div>
+                <div id="playlist-videos" class="playlist-videos"></div>
+
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contato" class="section contact-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">Entre em <span>Contato</span></h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">Mande sua mensagem ou solicite uma aula</p>
+                </div>
+
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>Email</h3>
+                            <p>nilsonjosesilvagomes1@gmail.com</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <h3>WhatsApp</h3>
+                            <p>+55 (71) 99938-5205</p>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h3>Localização</h3>
+                            <p>Salvador, BA - Brasil</p>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+
+                    <form id="contact-form" action="https://formsubmit.co/nilsonjosesilvagomes1@gmail.com"
+                        method="POST">
+                        <!-- Campos ocultos úteis -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+                        <input type="hidden" name="_subject" value="Nova mensagem do site!">
+
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            Enviar Mensagem <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/Designer (2).jpeg" alt="Nilson Gomes Guitar" class="footer-logo-img">
+                <h2>Nilson Gomes <span>Guitar</span></h2>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#equipamentos">Equipamentos</a></li>
+                        <li><a href="#videos">Vídeos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Redes Sociais</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                        <li><a href="#"><i class="fab fa-soundcloud"></i> Sound Cloud</a></li>
+                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                        <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> nilsonjosesilvagomes1@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +55 (71) 99938-5205</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Salvador, BA - Brasil</li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <p class="direitos">&copy; 2025 Nilson Gomes. Todos os direitos reservados.</p>
-        <p class="contato-zap">📞Contato WhatsApp: (71) 99938-5205</p>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Nilson Gomes Guitar. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <i class="fas fa-heart"></i> por Nilson Gomes</p>
+        </div>
+
+        <a href="#" class="back-to-top" aria-label="Voltar ao topo">
+            <i class="fas fa-arrow-up"></i>
+        </a>
     </footer>
-
 
     <script src="scripts.js"></script>
 </body>

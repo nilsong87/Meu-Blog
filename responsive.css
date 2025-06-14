@@ -1,0 +1,527 @@
+/* =============================================
+   RESPONSIVIDADE PARA TODOS OS DISPOSITIVOS
+   ============================================= */
+
+/* 1. Dispositivos muito pequenos (telefones menores que 400px) */
+@media only screen and (max-width: 400px) {
+    /* Ajustes gerais */
+    body {
+        font-size: 14px;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    /* Header */
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .title {
+        font-size: 1rem;
+    }
+    
+    /* Hero section */
+    .hero-section {
+        min-height: 500px;
+        padding-top: 60px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .hero-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Sobre */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-image {
+        max-width: 250px;
+    }
+    
+    .influences-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 1rem;
+    }
+    
+    .influence-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Equipamentos */
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Vídeos */
+    .video-controls {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .video-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Contato */
+    .contact-container {
+        grid-template-columns: 1fr;          
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        width: 100%;           
+    }    
+
+    p {
+        font-size: 1rem;
+    }
+
+    
+    /* Footer */
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-logo h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* 2. Telefones pequenos a médios (400px - 600px) */
+@media only screen and (min-width: 400px) and (max-width: 600px) {
+    /* Ajustes gerais */
+    body {
+        font-size: 15px;
+    }
+    
+    /* Header */
+    .header-container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .logo {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .title {
+        font-size: 1.1rem;
+    }
+    
+    /* Hero section */
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Sobre */
+    .influences-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    }
+    
+    /* Equipamentos */
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    /* Contato */
+    .contact-info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-column {
+        font-size: 0.8rem;
+    }
+}
+
+/* 3. Tablets pequenos (600px - 768px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    /* Header */
+    .title {
+        font-size: 1.2rem;
+    }
+    
+    /* Hero section */
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    /* Equipamentos */
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+        .footer-column {
+        font-size: 0.8rem;
+    }
+}
+
+/* 4. Tablets médios a grandes (768px - 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    /* Ajustes que se aplicam a esta faixa */
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+}
+
+/* 5. Telas grandes (992px - 1200px) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* Ajustes específicos para telas grandes */
+    .container {
+        max-width: 960px;
+    }
+}
+
+/* 6. Telas muito grandes (acima de 1200px) */
+@media only screen and (min-width: 1200px) {
+    /* Estilos específicos para telas muito grandes */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* 7. Orientação paisagem em dispositivos móveis */
+@media only screen and (max-width: 900px) and (orientation: landscape) {
+    /* Ajustes específicos para orientação paisagem */
+    .hero-section {
+        min-height: 600px;
+        padding-top: 70px;
+    }
+    
+    .nav-list {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+}
+
+/* 8. Dispositivos com altura muito pequena */
+@media only screen and (max-height: 500px) {
+    /* Ajustes para telas muito curtas */
+    .hero-section {
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+    
+    .hero-content {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    
+    .scroll-down {
+        display: none;
+    }
+}
+
+/* 9. Ajustes para telas de alta densidade (Retina) */
+@media 
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi) {
+    /* Melhorias para telas Retina/HD */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    .logo, .profile-image, .influence-img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* 10. Modo escuro preferido */
+@media (prefers-color-scheme: dark) {
+    /* Ajustes adicionais para modo escuro */
+    body {
+        background-color: #111;
+    }
+}
+
+/* 11. Ajustes para quando JavaScript está desabilitado */
+.no-js {
+    /* Estilos para quando JS não está disponível */
+    .nav-toggle {
+        display: none;
+    }
+    
+    .nav {
+        position: static;
+        width: auto;
+        height: auto;
+    }
+}
+
+/* =============================================
+   AJUSTES ESPECÍFICOS PARA COMPONENTES
+   ============================================= */
+
+/* Player de vídeo responsivo */
+.video-player {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-player iframe,
+.video-player object,
+.video-player embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Grid de equipamentos responsivo */
+@media (max-width: 768px) {
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Menu de navegação responsivo */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.8rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* Formulário de contato responsivo */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .submit-button {
+        padding: 0.8rem;
+    }
+}
+
+/* Seção de influências responsiva */
+@media (max-width: 600px) {
+    .influences-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 1rem;
+    }
+    
+    .influence-img {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+/* =============================================
+   MELHORIAS DE USABILIDADE PARA TOUCH
+   ============================================= */
+
+@media (hover: none) {
+    /* Aumenta áreas de toque para dispositivos touch */
+    button, a, .nav-link, .equipment-card {
+        min-height: 44px; /* Tamanho mínimo recomendado para toque */
+    }
+    
+    /* Remove hover effects em dispositivos que não suportam */
+    .equipment-card:hover {
+        transform: none;
+    }
+    
+    .nav-link:hover {
+        background-color: transparent;
+        color: inherit;
+    }
+    
+    /* Aumenta o tamanho dos inputs para toque */
+    input, textarea, select {
+        min-height: 44px;
+        font-size: 16px; /* Evita zoom automático no iOS */
+    }
+}
+
+/* =============================================
+   IMPRESSÃO
+   ============================================= */
+
+@media print {
+    /* Esconde elementos não essenciais para impressão */
+    .header, .nav, .hero-section, .footer, .back-to-top {
+        display: none !important;
+    }
+    
+    /* Ajustes de layout para impressão */
+    body {
+        background: white;
+        color: black;
+        font-size: 12pt;
+    }
+    
+    .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    /* Melhora a legibilidade para impressão */
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
+    }
+    
+    /* Evita quebras de página em seções importantes */
+    .section {
+        page-break-inside: avoid;
+    }
+}
+
+/* Containers */
+.playlist-buttons, .playlist-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+/* Botões das playlists */
+.playlist-buttons .btn-playlist {
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: #232526;
+  border: 2px solid #00dbde;
+  border-radius: 32px;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 16px 0 rgba(0,219,222,0.15), 0 1.5px 0 #ece9e6 inset;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, transform 0.2s;
+  outline: none;
+  margin-bottom: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 220px;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.playlist-buttons .btn-playlist:hover, 
+.playlist-buttons .btn-playlist:focus {
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+  color: #fff;
+  border: 2px solid #ece9e6;
+  box-shadow: 0 8px 32px 0 rgba(252,0,255,0.18), 0 2px 0 #ece9e6 inset;
+  transform: scale(1.06);
+}
+
+/* Botões dos vídeos */
+.playlist-videos .btn-video {
+  background: linear-gradient(120deg, #b0bec5 0%, #232526 100%);
+  color: var(--primary-color);
+  border: 1.5px solid #b0bec5;
+  border-radius: 20px;
+  padding: 0.7rem 1.7rem;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s, transform 0.2s;
+  outline: none;
+  margin-bottom: 0.3rem;
+  position: relative;
+  overflow: hidden;
+  min-width: 160px;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.playlist-videos .btn-video:hover, 
+.playlist-videos .btn-video:focus, 
+.playlist-videos .btn-video.active {
+  background: linear-gradient(120deg, #232526 0%, #b0bec5 100%);
+  color: #ece9e6;
+  border: 1.5px solid #00dbde;
+  box-shadow: 0 4px 16px 0 rgba(176,190,197,0.18), 0 1.5px 0 #ece9e6 inset;
+  transform: scale(1.04);
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+  .playlist-buttons .btn-playlist,
+  .playlist-videos .btn-video {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    min-width: 160px;
+  }
+  .playlist-buttons, .playlist-videos {
+    gap: 0.8rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .playlist-buttons, .playlist-videos {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .playlist-buttons .btn-playlist,
+  .playlist-videos .btn-video {
+    width: 100%;
+    min-width: unset;
+    font-size: 0.98rem;
+    padding: 0.7rem 1rem;
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .playlist-buttons .btn-playlist,
+  .playlist-videos .btn-video {
+    font-size: 0.92rem;
+    padding: 0.6rem 0.5rem;
+    border-radius: 14px;
+  }
+}

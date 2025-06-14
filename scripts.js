@@ -1,3 +1,81 @@
+// script.min.js | Otimizado por Nilson Gomes | MIT License
+
+'use strict';
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Menu Mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    
+    if (navToggle && nav) {
+        navToggle.addEventListener('click', function() {
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            nav.classList.toggle('active');
+            document.body.style.overflow = !isExpanded ? 'hidden' : '';
+        });
+    }
+    
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav) nav.classList.remove('active');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    if (header) {
+        function handleScroll() {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        }
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Executa uma vez no carregamento
+    }
+    
+    // Botão voltar ao topo
+    const backToTop = document.querySelector('.back-to-top');
+    if (backToTop) {
+        function handleBackToTopScroll() {
+            backToTop.classList.toggle('active', window.scrollY > 300);
+        }
+        
+        window.addEventListener('scroll', handleBackToTopScroll);
+        handleBackToTopScroll(); // Executa uma vez no carregamento
+        
+        backToTop.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    
+    // Tabs de playlists
+    const playlistTabs = document.querySelectorAll('.playlist-tab');
+    const playlistContents = document.querySelectorAll('.playlist-content');
+    
+    if (playlistTabs.length && playlistContents.length) {
+        playlistTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                
+                // Remove active class from all tabs and contents
+                playlistTabs.forEach(t => t.classList.remove('active'));
+                playlistContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                this.classList.add('active');
+                document.getElementById(category)?.classList.add('active');
+            });
+        });
+    }
+    
+    // Lista de vídeos (adicione todos os seus vídeos aqui)
 const videos = [
   { id: "OlETRETdx5c", title: "Angry Chair - Alice in Chains", banda: "Alice in Chains" },
   { id: "UpM83IM8Rlc", title: "Blead the Freak - Alice in Chains", banda: "Alice in Chains" },  
@@ -220,111 +298,161 @@ const videos = [
   { id: "nXOxjcVn4fs", title: "Prison Song - System of a Down", banda: "System of a Down" },
   { id: "kqhQJb5Y6xo", title: "Psyco - System of a Down", banda: "System of a Down" },
   { id: "W0H4EyNfusA", title: "Violent Pornography - System of a Down", banda: "System of a Down" },
-   
 ];
-    
-  let currentVideoIndex = 0; 
-  const videoIframe = document.getElementById('youtube-video');
-  const playlistButtons = document.getElementById('playlist-buttons');
-  const playlistVideos = document.getElementById('playlist-videos');
-  const closePlaylistButton = document.getElementById('close-playlist');
-  
-  function loadVideo(index) {
-      if (index >= 0 && index < videos.length) {
-          videoIframe.src = `https://www.youtube.com/embed/${videos[index].id}`;
-          currentVideoIndex = index; 
-      }
-  }
-  
-  function initializeVideo() {
-      if (!videoIframe.src) { 
-          loadVideo(0); 
-      }
-  }
-  
-  function checkScreenSize() {
-      if (window.innerWidth <= 768 && !videoIframe.src) {
-          initializeVideo(); 
-      }
-  }
-  
-  
-  window.addEventListener('load', () => {
-      initializeVideo(); 
-  });
-  
-  
-  window.addEventListener('resize', checkScreenSize);
-  
-  document.getElementById('prev-video').addEventListener('click', () => {
-      if (currentVideoIndex > 0) {
-          loadVideo(currentVideoIndex - 1);
-      }
-  });
-  
-  document.getElementById('next-video').addEventListener('click', () => {
-      if (currentVideoIndex < videos.length - 1) {
-          loadVideo(currentVideoIndex + 1);
-      }
-  });
-  
-  const playlists = {};
-  videos.forEach(video => {
-      if (!playlists[video.banda]) {
-          playlists[video.banda] = [];
-      }
-      playlists[video.banda].push(video);
-  });
-  
-  Object.keys(playlists).forEach(banda => {
-      const button = document.createElement('button');
-      button.textContent = banda;
-      button.addEventListener('click', () => {
-          loadPlaylist(banda);
-      });
-      playlistButtons.appendChild(button);
-  });
-  
-  function loadPlaylist(banda) {
-      playlistVideos.innerHTML = ''; 
-      playlists[banda].forEach((video) => {
-          const videoItem = document.createElement('div');
-          videoItem.className = 'video-item';
-          videoItem.innerHTML = `<h4>${video.title}</h4>`;
-          videoItem.addEventListener('click', () => {
-              const selectedIndex = videos.findIndex(v => v.id === video.id);
-              if (selectedIndex !== -1) {
-                  loadVideo(selectedIndex); 
-                  closePlaylist(); 
-              }
-          });
-          playlistVideos.appendChild(videoItem);
-      });
-      closePlaylistButton.style.display = 'block'; 
-  }
-  
-  function closePlaylist() {
-      playlistVideos.innerHTML = ''; 
-      closePlaylistButton.style.display = 'none'; 
-  }
-  
-  closePlaylistButton.addEventListener('click', closePlaylist);
-    
-  window.onscroll = function () {
-      scrollFunction();
+
+// Agrupa vídeos por banda
+const bandas = videos.reduce((acc, video) => {
+  if (!video.banda) return acc;
+  acc[video.banda] = acc[video.banda] || [];
+  acc[video.banda].push(video);
+  return acc;
+}, {});
+
+const playlistButtons = document.getElementById('playlist-buttons');
+const youtubeIframe = document.getElementById('youtube-video');
+const prevButton = document.getElementById('prev-video');
+const nextButton = document.getElementById('next-video');
+
+let currentPlaylist = [];
+let currentVideoIndex = 0;
+let currentVideosDiv = null;
+
+// Cria botões de playlist e containers de vídeos logo abaixo
+Object.keys(bandas).forEach(banda => {
+  // Botão da playlist
+  const btn = document.createElement('button');
+  btn.textContent = `Playlist: ${banda}`;
+  btn.className = 'btn-playlist';
+
+  // Container dos vídeos dessa playlist (inicialmente oculto)
+  const videosDiv = document.createElement('div');
+  videosDiv.className = 'playlist-videos';
+
+  btn.onclick = () => {
+    // Alterna exibição: se já está visível, oculta; senão, exibe e oculta os outros
+    if (videosDiv.style.display === 'none') {
+      videosDiv.style.display = 'flex';
+      return;
+    }
+    document.querySelectorAll('.playlist-videos').forEach(div => div.style.display = 'flex');
+    videosDiv.style.display = 'none';
+
+    // Renderiza os vídeos
+    videosDiv.innerHTML = bandas[banda].map((v, i) => `
+      <button class="btn-video${i === 0 ? ' active' : ''}" data-index="${i}">${v.title}</button>
+    `).join('');
+
+    // Atualiza playlist e vídeo atual
+    currentPlaylist = bandas[banda];
+    currentVideoIndex = 0;
+    playVideo(currentPlaylist[0].id);
+
+    // Eventos dos botões de vídeo
+    videosDiv.querySelectorAll('.btn-video').forEach(btnVid => {
+      btnVid.onclick = function() {
+        currentVideoIndex = Number(this.getAttribute('data-index'));
+        playVideo(currentPlaylist[currentVideoIndex].id);
+        updateActiveVideo(videosDiv);
+      };
+    });
+
+    updateActiveVideo(videosDiv);
+    currentVideosDiv = videosDiv;
   };
-  
-  function scrollFunction() {
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          document.getElementById("back-to-top").style.display = "block";
-      } else {
-          document.getElementById("back-to-top").style.display = "none";
-      }
-  }
-  
-  document.getElementById("back-to-top").addEventListener("click", function () {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
+
+  playlistButtons.appendChild(btn);
+  playlistButtons.appendChild(videosDiv);
+});
+
+// Funções de player
+function playVideo(id) {
+  youtubeIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+  if (currentVideosDiv) updateActiveVideo(currentVideosDiv);
+}
+
+function updateActiveVideo(videosDiv) {
+  videosDiv.querySelectorAll('.btn-video').forEach((btn, i) => {
+    btn.classList.toggle('active', i === currentVideoIndex);
   });
+}
+
+// Navegação
+prevButton.onclick = () => {
+  if (!currentPlaylist.length) return;
+  currentVideoIndex = (currentVideoIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
+  playVideo(currentPlaylist[currentVideoIndex].id);
+};
+nextButton.onclick = () => {
+  if (!currentPlaylist.length) return;
+  currentVideoIndex = (currentVideoIndex + 1) % currentPlaylist.length;
+  playVideo(currentPlaylist[currentVideoIndex].id);
+};
+
+// Seleciona a primeira playlist ao carregar
+window.addEventListener('DOMContentLoaded', () => {
+  const firstBtn = playlistButtons.querySelector('.btn-playlist');
+  if (firstBtn) firstBtn.click();
+});
+
+
+    
+    // Atualiza o ano no footer
+    const currentYear = document.getElementById('current-year');
+    if (currentYear) {
+        currentYear.textContent = new Date().getFullYear();
+    }
+    
+    // Efeito de digitação no hero (opcional)
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle) {
+        const text = heroTitle.textContent;
+        heroTitle.textContent = '';
+        
+        let i = 0;
+        const typingEffect = setInterval(() => {
+            if (i < text.length) {
+                heroTitle.textContent += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(typingEffect);
+            }
+        }, 100);
+    }
+    
+    // Animação ao rolar a página
+    const animateOnScroll = function() {
+        const elements = document.querySelectorAll('.section-title, .about-image, .equipment-card, .contact-card');
+        
+        elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.3;
+            
+            if (elementPosition < screenPosition) {
+                element.classList.add('animate');
+            }
+        });
+    };
+    
+    window.addEventListener('scroll', animateOnScroll);
+    animateOnScroll(); // Run once on load
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const contactForm = document.getElementById('contact-form');
   
-  
+  contactForm.addEventListener('submit', function(e) {
+    // Mostrar loading
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+    submitBtn.disabled = true;
+    
+    // Você pode adicionar aqui uma chamada fetch() se quiser mais controle
+    // Mas o FormSubmit.co já cuida do envio automaticamente
+  });
+});
+
+
+
+
+
