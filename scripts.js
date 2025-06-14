@@ -301,101 +301,100 @@ const videos = [
 ];
 
 // Agrupa vídeos por banda
-const bandas = videos.reduce((acc, video) => {
-  if (!video.banda) return acc;
-  acc[video.banda] = acc[video.banda] || [];
-  acc[video.banda].push(video);
-  return acc;
-}, {});
+    const bandas = videos.reduce((acc, video) => {
+      if (!video.banda) return acc;
+      acc[video.banda] = acc[video.banda] || [];
+      acc[video.banda].push(video);
+      return acc;
+    }, {});
 
-const playlistButtons = document.getElementById('playlist-buttons');
-const youtubeIframe = document.getElementById('youtube-video');
-const prevButton = document.getElementById('prev-video');
-const nextButton = document.getElementById('next-video');
+    const playlistButtons = document.getElementById('playlist-buttons');
+    const youtubeIframe = document.getElementById('youtube-video');
+    const prevButton = document.getElementById('prev-video');
+    const nextButton = document.getElementById('next-video');
 
-let currentPlaylist = [];
-let currentVideoIndex = 0;
-let currentVideosDiv = null;
+    let currentPlaylist = [];
+    let currentVideoIndex = 0;
+    let currentVideosDiv = null;
 
-// Cria botões de playlist e containers de vídeos logo abaixo
-Object.keys(bandas).forEach(banda => {
-  // Botão da playlist
-  const btn = document.createElement('button');
-  btn.textContent = `Playlist: ${banda}`;
-  btn.className = 'btn-playlist';
+    // Cria botões de playlist e containers de vídeos
+    Object.keys(bandas).forEach(banda => {
+      // Botão da playlist
+      const btn = document.createElement('button');
+      btn.textContent = banda;
+      btn.className = 'btn-playlist';
 
-  // Container dos vídeos dessa playlist (inicialmente oculto)
-  const videosDiv = document.createElement('div');
-  videosDiv.className = 'playlist-videos';
+      // Container dos vídeos dessa playlist (inicialmente oculto)
+      const videosDiv = document.createElement('div');
+      videosDiv.className = 'playlist-videos';
+      videosDiv.style.display = 'none';
 
-  btn.onclick = () => {
-    // Alterna exibição: se já está visível, oculta; senão, exibe e oculta os outros
-    if (videosDiv.style.display === 'none') {
-      videosDiv.style.display = 'flex';
-      return;
-    }
-    document.querySelectorAll('.playlist-videos').forEach(div => div.style.display = 'flex');
-    videosDiv.style.display = 'none';
+      btn.onclick = () => {
+        // Alterna exibição do container de vídeos
+        const isHidden = videosDiv.style.display === 'none';
+        
+        // Oculta todos os containers primeiro
+        document.querySelectorAll('.playlist-videos').forEach(div => {
+          div.style.display = 'none';
+        });
+        
+        // Mostra apenas o container clicado, se estiver oculto
+        videosDiv.style.display = isHidden ? 'flex' : 'none';
 
-    // Renderiza os vídeos
-    videosDiv.innerHTML = bandas[banda].map((v, i) => `
-      <button class="btn-video${i === 0 ? ' active' : ''}" data-index="${i}">${v.title}</button>
-    `).join('');
+        // Se estiver mostrando, renderiza os vídeos
+        if (isHidden) {
+          videosDiv.innerHTML = bandas[banda].map((v, i) => `
+            <button class="btn-video${i === 0 ? ' active' : ''}" data-index="${i}">${v.title}</button>
+          `).join('');
 
-    // Atualiza playlist e vídeo atual
-    currentPlaylist = bandas[banda];
-    currentVideoIndex = 0;
-    playVideo(currentPlaylist[0].id);
+          // Atualiza playlist e vídeo atual
+          currentPlaylist = bandas[banda];
+          currentVideoIndex = 0;
+          loadVideo(currentPlaylist[0].id); // Apenas carrega, não autoplay
 
-    // Eventos dos botões de vídeo
-    videosDiv.querySelectorAll('.btn-video').forEach(btnVid => {
-      btnVid.onclick = function() {
-        currentVideoIndex = Number(this.getAttribute('data-index'));
-        playVideo(currentPlaylist[currentVideoIndex].id);
-        updateActiveVideo(videosDiv);
+          // Eventos dos botões de vídeo
+          videosDiv.querySelectorAll('.btn-video').forEach(btnVid => {
+            btnVid.onclick = function() {
+              currentVideoIndex = Number(this.getAttribute('data-index'));
+              loadVideo(currentPlaylist[currentVideoIndex].id);
+              updateActiveVideo(videosDiv);
+            };
+          });
+
+          updateActiveVideo(videosDiv);
+          currentVideosDiv = videosDiv;
+        }
       };
+
+      playlistButtons.appendChild(btn);
+      playlistButtons.appendChild(videosDiv);
     });
 
-    updateActiveVideo(videosDiv);
-    currentVideosDiv = videosDiv;
-  };
+    // Funções de player - agora apenas carrega o vídeo sem autoplay
+    function loadVideo(id) {
+      youtubeIframe.src = `https://www.youtube.com/embed/${id}?enablejsapi=1`;
+      if (currentVideosDiv) updateActiveVideo(currentVideosDiv);
+    }
 
-  playlistButtons.appendChild(btn);
-  playlistButtons.appendChild(videosDiv);
-});
+    function updateActiveVideo(videosDiv) {
+      videosDiv.querySelectorAll('.btn-video').forEach((btn, i) => {
+        btn.classList.toggle('active', i === currentVideoIndex);
+      });
+    }
 
-// Funções de player
-function playVideo(id) {
-  youtubeIframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-  if (currentVideosDiv) updateActiveVideo(currentVideosDiv);
-}
-
-function updateActiveVideo(videosDiv) {
-  videosDiv.querySelectorAll('.btn-video').forEach((btn, i) => {
-    btn.classList.toggle('active', i === currentVideoIndex);
-  });
-}
-
-// Navegação
-prevButton.onclick = () => {
-  if (!currentPlaylist.length) return;
-  currentVideoIndex = (currentVideoIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
-  playVideo(currentPlaylist[currentVideoIndex].id);
-};
-nextButton.onclick = () => {
-  if (!currentPlaylist.length) return;
-  currentVideoIndex = (currentVideoIndex + 1) % currentPlaylist.length;
-  playVideo(currentPlaylist[currentVideoIndex].id);
-};
-
-// Seleciona a primeira playlist ao carregar
-window.addEventListener('DOMContentLoaded', () => {
-  const firstBtn = playlistButtons.querySelector('.btn-playlist');
-  if (firstBtn) firstBtn.click();
-});
-
-
+    // Navegação
+    prevButton.onclick = () => {
+      if (!currentPlaylist.length) return;
+      currentVideoIndex = (currentVideoIndex - 1 + currentPlaylist.length) % currentPlaylist.length;
+      loadVideo(currentPlaylist[currentVideoIndex].id);
+    };
     
+    nextButton.onclick = () => {
+      if (!currentPlaylist.length) return;
+      currentVideoIndex = (currentVideoIndex + 1) % currentPlaylist.length;
+      loadVideo(currentPlaylist[currentVideoIndex].id);
+    };
+
     // Atualiza o ano no footer
     const currentYear = document.getElementById('current-year');
     if (currentYear) {
@@ -446,12 +445,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const originalText = submitBtn.innerHTML;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
     submitBtn.disabled = true;
-    
-    // Você pode adicionar aqui uma chamada fetch() se quiser mais controle
-    // Mas o FormSubmit.co já cuida do envio automaticamente
   });
 });
-
 
 function randomBetween(a, b) {
   return a + Math.random() * (b - a);
@@ -486,8 +481,3 @@ function moveGhost() {
 
 // Inicia o movimento após o carregamento
 window.addEventListener('DOMContentLoaded', moveGhost);
-
-
-
-
-
