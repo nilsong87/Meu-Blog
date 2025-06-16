@@ -75,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    
     // Lista de vídeos 
 const videos = [
   { id: "OlETRETdx5c", title: "Angry Chair - Alice in Chains", banda: "Alice in Chains" },
@@ -486,3 +487,12 @@ window.addEventListener('DOMContentLoaded', moveGhost);
 // Mensagem de boas-vindas no console
 // ==========================
 console.log("%cBem-vindo ao Blog de Nilson Gomes! 🚀", "color:rgb(48, 114, 255); font-size: 1.2em; font-weight: bold;");
+
+document.addEventListener('DOMContentLoaded', function() {
+  // ID do vídeo que você quer exibir ao carregar a página
+  const videoId = "74j0m_bQ6wU"; // Exemplo: ...And Justice For All... - Metallica
+  const youtubeIframe = document.getElementById('youtube-video');
+  if (youtubeIframe) {
+    youtubeIframe.src = `https://www.youtube.com/embed/${videoId}`;
+  }
+});
